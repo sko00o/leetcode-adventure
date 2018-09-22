@@ -14,17 +14,16 @@ struct TreeNode {
 };
 
 class Solution {
- private:
-  int num = 0;
-
  public:
-  Solution(int n) { this->num = n; }
   Solution() { this->num = 0; }
 
   vector<TreeNode*> generateTrees(int n) {
+    if (n <= 0) {
+      return vector<TreeNode*>();
+    }
     this->num = n;
-    vector<vector<TreeNode*>> G;
-    G.resize(n + 1);
+
+    vector<TreeNode*> G[n + 1];
 
     G[0].push_back(nullptr);
     G[1].push_back(new TreeNode(1));
@@ -34,16 +33,18 @@ class Solution {
           for (auto r : G[i - j]) {
             auto nd = new TreeNode(j);
             nd->left = l;
-            nd->right = r;
+            // nd->right = r;
+            nd->right = newTree(r, j);
             G[i].push_back(nd);
           }
         }
       }
     }
-    return G[n]; // not fix
+    return G[n];
   }
 
-  void printTrees(vector<TreeNode*> t) {
+  // print trees
+  void printTrees(vector<TreeNode*> t, bool needFix) {
     bool first = true;
     cout << "[";
     int n = num;
@@ -54,7 +55,11 @@ class Solution {
       } else {
         cout << "," << endl;
       }
-      cout << "  " << treeBFSStrFix(i, n);
+      if (needFix) {
+        cout << "  " << treeBFSStrFix(i, n);
+      } else {
+        cout << "  " << treeBFSStr(i, n);
+      }
     }
     if (!first) {
       cout << endl;
@@ -62,6 +67,21 @@ class Solution {
     cout << "]" << endl;
   }
 
+ private:
+  int num;
+
+  // copy and add offset in val
+  TreeNode* newTree(TreeNode* a, int offset) {
+    if (!a) {
+      return nullptr;
+    }
+    auto r = new TreeNode(a->val + offset);
+    r->left = newTree(a->left, offset);
+    r->right = newTree(a->right, offset);
+    return r;
+  }
+
+  // BFS the tree and return the result string
   string treeBFSStr(TreeNode* a, int n) {
     queue<TreeNode*> q;
     q.push(a);
@@ -93,7 +113,7 @@ class Solution {
     return out;
   }
 
-  // fix to print
+  // fix val while printing
   string treeBFSStrFix(TreeNode* a, int n) {
     struct tmp {
       TreeNode* t;
@@ -147,7 +167,7 @@ class Solution {
 void stdTest() {
   Solution s;
   auto g = s.generateTrees(3);
-  s.printTrees(g);
+  s.printTrees(g, false);
 }
 
 int main() {
