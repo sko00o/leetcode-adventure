@@ -7,7 +7,7 @@ import (
 )
 
 // test in case `find` function is not right
-func TestFind(t *testing.T) {
+func Test_find(t *testing.T) {
 	Convey("make a linked list", t, func() {
 		ll := Constructor()
 
