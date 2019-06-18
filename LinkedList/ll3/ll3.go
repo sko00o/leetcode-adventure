@@ -13,6 +13,34 @@ type Node struct {
 	prev *Node
 }
 
+func (p *Node) insertPrev(val int) *Node {
+	np := Node{
+		data: val,
+		prev: p.prev,
+		next: p,
+	}
+	if p.prev != nil {
+		p.prev.next = &np
+	}
+	p.prev = &np
+
+	return &np
+}
+
+func (p *Node) insertNext(val int) *Node {
+	np := Node{
+		data: val,
+		prev: p,
+		next: p.next,
+	}
+	if p.next != nil {
+		p.next.prev = &np
+	}
+	p.next = &np
+
+	return &np
+}
+
 /** Initialize your data structure here. */
 func Constructor() MyLinkedList {
 	return MyLinkedList{}
@@ -46,12 +74,7 @@ func (l *MyLinkedList) AddAtHead(val int) {
 		return
 	}
 
-	p := &Node{
-		data: val,
-		next: l.head,
-	}
-	l.head.prev = p
-	l.head = p
+	l.head = l.head.insertPrev(val)
 	l.len++
 }
 
@@ -66,11 +89,7 @@ func (l *MyLinkedList) AddAtTail(val int) {
 		return
 	}
 
-	l.tail.next = &Node{
-		data: val,
-		prev: l.tail,
-	}
-	l.tail = l.tail.next
+	l.tail = l.tail.insertNext(val)
 	l.len++
 }
 
@@ -96,12 +115,7 @@ func (l *MyLinkedList) AddAtIndex(index int, val int) {
 		return
 	}
 
-	p := l.find(index)
-	p.prev.next = &Node{
-		data: val,
-		prev: p.prev,
-		next: p,
-	}
+	l.find(index).insertPrev(val)
 	l.len++
 }
 
