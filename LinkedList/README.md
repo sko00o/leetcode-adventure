@@ -17,3 +17,9 @@ solve:
 * [Linked List Cycle I/II](tpt/cycle.go)
 * [Intersection of Two Linked Lists](tpt/intersect.go)
 * [Remove Nth Node From End of List](tpt/remove.go)
+
+## [Classic Problems](https://leetcode.com/explore/learn/card/linked-list/219/classic-problems/1204/)
+
+solve:
+
+* [Reverse Linked List](cp/reverse.go)
