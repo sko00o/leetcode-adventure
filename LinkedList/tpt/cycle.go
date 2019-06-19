@@ -1,15 +1,9 @@
-package cycle
+package tpt
 
 /*
 	1. If there is no cycle, the fast pointer will stop at the end of the linked list.
 	2. If there is a cycle, the fast pointer will eventually meet with the slow pointer.
 */
-
-// Definition for singly-linked list node
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
 
 // determine cycle
 func hasCycle(head *ListNode) bool {

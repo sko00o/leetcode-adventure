@@ -1,4 +1,4 @@
-package linkedlist
+package sll
 
 import (
 	"fmt"
@@ -6,9 +6,9 @@ import (
 
 	. "github.com/smartystreets/goconvey/convey"
 
-	"linkedlist/ll1"
-	"linkedlist/ll2"
-	"linkedlist/ll3"
+	"linkedlist/sll/ll1"
+	"linkedlist/sll/ll2"
+	"linkedlist/sll/ll3"
 )
 
 func TestLinkedList(t *testing.T) {

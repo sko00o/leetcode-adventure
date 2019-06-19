@@ -4,12 +4,14 @@ import (
 	"testing"
 
 	. "github.com/smartystreets/goconvey/convey"
+
+	"linkedlist/sll"
 )
 
 // test in case `find` function is not right
 func Test_find(t *testing.T) {
 	Convey("make a linked list", t, func() {
-		ll := Constructor()
+		ll := sll.Constructor()
 
 		Convey("add numbers to tail", func() {
 			for i := 0; i < 11; i++ {

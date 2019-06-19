@@ -1,4 +1,4 @@
-package linkedlist
+package sll
 
 type LinkedList interface {
 	Get(index int) int
