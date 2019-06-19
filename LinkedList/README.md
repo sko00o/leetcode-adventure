@@ -14,6 +14,6 @@ solve:
 
 solve:
 
-* [determine cycle](tpt/cycle.go)
-* [detect cycle](tpt/cycle.go)
-* [detect intersection of two linked list](tpt/intersect.go)
+* [Linked List Cycle I/II](tpt/cycle.go)
+* [Intersection of Two Linked Lists](tpt/intersect.go)
+* [Remove Nth Node From End of List](tpt/remove.go)
