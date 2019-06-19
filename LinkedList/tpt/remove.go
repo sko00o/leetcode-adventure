@@ -1,5 +1,8 @@
 package tpt
 
+// remove nth node from end of list
+// space complexity: O(1)
+// time complexity: O(n)
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	if n < 0 || head == nil {
 		return head

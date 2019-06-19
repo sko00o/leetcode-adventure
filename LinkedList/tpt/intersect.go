@@ -1,6 +1,8 @@
 package tpt
 
 // detect intersection of two linked lists
+// space complexity: O(1)
+// time complexity: O(n^2)
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	if headA == nil || headB == nil {
 		return nil

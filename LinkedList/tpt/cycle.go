@@ -6,6 +6,8 @@ package tpt
 */
 
 // determine cycle
+// space complexity: O(1)
+// time complexity: O(n)
 func hasCycle(head *ListNode) bool {
 	fp := head
 	sp := head
@@ -28,6 +30,8 @@ func hasCycle(head *ListNode) bool {
 }
 
 // detect cycle
+// space complexity: O(1)
+// time complexity: O(n^2)
 func detectCycle(head *ListNode) *ListNode {
 	fp := head
 	sp := head
