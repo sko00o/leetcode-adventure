@@ -13,7 +13,7 @@ func reverseList(head *ListNode) *ListNode {
 	return head
 }
 
-func reverseList2(h *ListNode) *ListNode {
+func reverseList1(h *ListNode) *ListNode {
 	if h != nil {
 		for p, np := h, h.Next; np != nil; np = p.Next {
 			p.Next, np.Next, h = np.Next, h, np

@@ -58,7 +58,7 @@ func Test_reverseList(t *testing.T) {
 		},
 	}
 
-	for _, f := range []func(*ListNode) *ListNode{reverseList, reverseList2} {
+	for _, f := range []func(*ListNode) *ListNode{reverseList, reverseList1} {
 		for i, task := range tasks {
 			h1 := makeLinkedList(task.list...)
 			h2 := f(h1)

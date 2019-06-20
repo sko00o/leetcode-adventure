@@ -24,3 +24,5 @@ solve:
 
 * [Reverse Linked List](cp/reverse.go)
 * [Remove Linked List Elements](cp/remove.go)
+* [Odd Even Linked List](cp/oddeven.go)
+* [Palindrome Linked List](cp/palindrome.go)
