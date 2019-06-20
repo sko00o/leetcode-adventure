@@ -23,3 +23,4 @@ solve:
 solve:
 
 * [Reverse Linked List](cp/reverse.go)
+* [Remove Linked List Elements](cp/remove.go)
