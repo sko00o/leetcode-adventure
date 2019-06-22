@@ -26,3 +26,10 @@ solve:
 * [Remove Linked List Elements](cp/remove.go)
 * [Odd Even Linked List](cp/oddeven.go)
 * [Palindrome Linked List](cp/palindrome.go)
+
+## Conclusion
+
+solve:
+
+* [Merge Two Sorted Lists](cp/merge.go)
+* [Add Two Numbers](cp/add.go)
