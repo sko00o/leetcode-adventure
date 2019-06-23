@@ -33,3 +33,4 @@ solve:
 
 * [Merge Two Sorted Lists](cp/merge.go)
 * [Add Two Numbers](cp/add.go)
+* Flatten a Multilevel Doubly Linked List [ [cpp](cp/flatten/flatten.cc) / [go](cp/flatten.go) ]

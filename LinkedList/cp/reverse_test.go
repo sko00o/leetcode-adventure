@@ -4,37 +4,6 @@ import (
 	"testing"
 )
 
-func makeLinkedList(list ...int) (head *ListNode) {
-	var p *ListNode
-	for _, v := range list {
-		n := &ListNode{
-			Val: v,
-		}
-
-		if p != nil {
-			p.Next = n
-			p = p.Next
-		} else {
-			// first node
-			p = n
-			head = n
-		}
-	}
-	return
-}
-
-func equal(a, b []int) bool {
-	if len(a) != len(b) {
-		return false
-	}
-	for i, v := range a {
-		if v != b[i] {
-			return false
-		}
-	}
-	return true
-}
-
 func Test_reverseList(t *testing.T) {
 	tasks := []struct {
 		list   []int
