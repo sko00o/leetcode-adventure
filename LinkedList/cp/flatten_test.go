@@ -77,7 +77,7 @@ func Test_makeMultilevelDoublyLinkedList(t *testing.T) {
 		head := makeMultilevelDoublyLinkedList(task.input...)
 		goThroughAllNodes(head, &got)
 		if !equal(got, task.expect) {
-			t.Errorf("func %T, task #%d failed, output: %v, expect: %v", f, i, got, task.expect)
+			t.Errorf("task #%d failed, output: %v, expect: %v", i, got, task.expect)
 		}
 	}
 }
@@ -110,7 +110,7 @@ func Test_flatten(t *testing.T) {
 		},
 	}
 
-	for _, f := range []func(*ListNode) *ListNode{flatten} {
+	for fIdx, f := range []func(*ListNode) *ListNode{flatten} {
 		for i, task := range tasks {
 			var got []int
 			origin := makeMultilevelDoublyLinkedList(task.input...)
@@ -119,23 +119,23 @@ func Test_flatten(t *testing.T) {
 				// check pointers
 				if p == ans {
 					if p.Prev != nil {
-						t.Error("head prev not nil")
+						t.Errorf("func #%d, head prev not nil", fIdx)
 					}
 				} else {
 					if p.Prev != prev {
-						t.Errorf("doubly linked list node prev wrong, got: %v, expect: %v", p.Prev, prev)
+						t.Errorf("func #%d, doubly linked list node prev wrong, got: %v, expect: %v", fIdx, p.Prev, prev)
 					}
 				}
 				if p.Child != nil {
-					t.Error("flatten doubly linked list child not nil")
+					t.Errorf("func #%d, flatten doubly linked list child not nil", fIdx)
 				}
 				if ans != origin {
-					t.Error("origin head has been changed")
+					t.Errorf("func #%d, origin head has been changed", fIdx)
 				}
 				got = append(got, p.Val)
 			}
 			if !equal(got, task.expect) {
-				t.Errorf("task #%d failed, output: %v, expect: %v", i, got, task.expect)
+				t.Errorf("func #%d, task #%d failed, output: %v, expect: %v", fIdx, i, got, task.expect)
 			}
 		}
 	}

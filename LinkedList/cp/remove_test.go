@@ -32,7 +32,7 @@ func Test_removeElements(t *testing.T) {
 		},
 	}
 
-	for _, f := range []func(*ListNode, int) *ListNode{removeElements} {
+	for fIdx, f := range []func(*ListNode, int) *ListNode{removeElements} {
 		for i, task := range tasks {
 			h1 := makeLinkedList(task.list...)
 			h2 := f(h1, task.val)
@@ -41,7 +41,7 @@ func Test_removeElements(t *testing.T) {
 				got = append(got, p.Val)
 			}
 			if !equal(got, task.expect) {
-				t.Errorf("func %T, task #%d failed, output: %v, expect: %v", f, i, got, task.expect)
+				t.Errorf("func #%d, task #%d failed, output: %v, expect: %v", fIdx, i, got, task.expect)
 			}
 		}
 	}

@@ -41,7 +41,7 @@ func Test_addTwoNumbers(t *testing.T) {
 		},
 	}
 
-	for _, f := range []func(l1, l2 *ListNode) *ListNode{addTwoNumbers, addTwoNumbers1} {
+	for fIdx, f := range []func(l1, l2 *ListNode) *ListNode{addTwoNumbers, addTwoNumbers1} {
 		for i, task := range tasks {
 			h1 := makeLinkedList(task.listA...)
 			h2 := makeLinkedList(task.listB...)
@@ -50,7 +50,7 @@ func Test_addTwoNumbers(t *testing.T) {
 				got = append(got, p.Val)
 			}
 			if !equal(got, task.expect) {
-				t.Errorf("func %T, task #%d failed, output: %v, expect: %v", f, i, got, task.expect)
+				t.Errorf("func #%d, task #%d failed, output: %v, expect: %v", fIdx, i, got, task.expect)
 			}
 		}
 	}
@@ -85,7 +85,7 @@ func Test_addWithBase(t *testing.T) {
 		},
 	}
 
-	for _, f := range []func(l1, l2 *ListNode, base int) *ListNode{addWithBase} {
+	for fIdx, f := range []func(l1, l2 *ListNode, base int) *ListNode{addWithBase} {
 		for i, task := range tasks {
 			h1 := makeLinkedList(task.listA...)
 			h2 := makeLinkedList(task.listB...)
@@ -94,7 +94,7 @@ func Test_addWithBase(t *testing.T) {
 				got = append(got, p.Val)
 			}
 			if !equal(got, task.expect) {
-				t.Errorf("func %T, task #%d failed, output: %v, expect: %v", f, i, got, task.expect)
+				t.Errorf("func #%d, task #%d failed, output: %v, expect: %v", fIdx, i, got, task.expect)
 			}
 		}
 	}
