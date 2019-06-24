@@ -13,13 +13,13 @@ func isPalindrome(head *ListNode) bool {
 func f(a, head *ListNode) (int, *ListNode) {
 	if a.Next == nil {
 		return a.Val, head
-	} else {
-		val, p := f(a.Next, head)
-		if p != nil && p.Val == val {
-			p = p.Next
-		}
-		return a.Val, p
 	}
+
+	val, p := f(a.Next, head)
+	if p != nil && p.Val == val {
+		p = p.Next
+	}
+	return a.Val, p
 }
 
 func isPalindrome1(head *ListNode) bool {

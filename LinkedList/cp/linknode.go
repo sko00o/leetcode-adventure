@@ -1,16 +1,21 @@
 package cp
 
-// definition for linked list node
+// ListNode definition for linked list node
 type ListNode struct {
 	// singly-linked list
-	Val  int
-	Next *ListNode
+	Val  int       `json:"val"`
+	Next *ListNode `json:"next"`
 
 	// extra for doubly-linked list
-	Prev *ListNode
+	Prev *ListNode `json:"-"`
 
 	// extra for multilevel doubly-linked list
-	Child *ListNode
+	Child *ListNode `json:"-"`
+
+	// extra for copy list with random pointer
+	ID     string    `json:"$id,omitempty"`
+	Ref    string    `json:"$ref,omitempty"`
+	Random *ListNode `json:"random"`
 }
 
 func makeLinkedList(list ...int) (head *ListNode) {
