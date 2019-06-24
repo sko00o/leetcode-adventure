@@ -33,4 +33,6 @@ solve:
 
 * [Merge Two Sorted Lists](cp/merge.go)
 * [Add Two Numbers](cp/add.go)
-* Flatten a Multilevel Doubly Linked List [ [cpp](cp/flatten/flatten.cc) / [go](cp/flatten.go) ]
+* Flatten a Multilevel Doubly Linked List [cpp](cp/cpp/flatten/flatten.cc) / [go](cp/flatten.go)
+* Copy List with Random Pointer  [cpp](cp/cpp/copy/copy.cc) / [go](cp/copy.go)
+* [Rotate List](cp/rotate.go)
