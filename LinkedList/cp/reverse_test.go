@@ -4,37 +4,6 @@ import (
 	"testing"
 )
 
-func makeLinkedList(list ...int) (head *ListNode) {
-	var p *ListNode
-	for _, v := range list {
-		n := &ListNode{
-			Val: v,
-		}
-
-		if p != nil {
-			p.Next = n
-			p = p.Next
-		} else {
-			// first node
-			p = n
-			head = n
-		}
-	}
-	return
-}
-
-func equal(a, b []int) bool {
-	if len(a) != len(b) {
-		return false
-	}
-	for i, v := range a {
-		if v != b[i] {
-			return false
-		}
-	}
-	return true
-}
-
 func Test_reverseList(t *testing.T) {
 	tasks := []struct {
 		list   []int
@@ -58,7 +27,7 @@ func Test_reverseList(t *testing.T) {
 		},
 	}
 
-	for _, f := range []func(*ListNode) *ListNode{reverseList, reverseList1} {
+	for fIdx, f := range []func(*ListNode) *ListNode{reverseList, reverseList1} {
 		for i, task := range tasks {
 			h1 := makeLinkedList(task.list...)
 			h2 := f(h1)
@@ -67,7 +36,7 @@ func Test_reverseList(t *testing.T) {
 				got = append(got, p.Val)
 			}
 			if !equal(got, task.expect) {
-				t.Errorf("func %T, task #%d failed, output: %v, expect: %v", f, i, got, task.expect)
+				t.Errorf("func #%d, task #%d failed, output: %v, expect: %v", fIdx, i, got, task.expect)
 			}
 		}
 	}

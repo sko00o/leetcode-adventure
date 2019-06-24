@@ -30,5 +30,12 @@ solution:
 
 solution:
 
-* [doubly linked list](dll/ll3/ll3.go)
-* [doubly linked list](dll/ll4/ll4.go)
+* Design Linked List [v1](dll/ll3/ll3.go) [v2](dll/ll4/ll4.go)
+
+## Conclusion
+
+solution:
+
+* [Merge Two Sorted Lists](cp/merge.go)
+* [Add Two Numbers](cp/add.go)
+* Flatten a Multilevel Doubly Linked List [ [cpp](cp/flatten/flatten.cc) / [go](cp/flatten.go) ]
