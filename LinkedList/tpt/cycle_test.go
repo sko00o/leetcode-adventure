@@ -51,6 +51,7 @@ func Test_hasCycle(t *testing.T) {
 		{head: []int{1, 2}, pos: 0, expect: true},
 		{head: []int{1}, pos: -1, expect: false},
 		{head: []int{1, 2, 3}, pos: 3, expect: false},
+		{head: []int{}, pos: 1, expect: false},
 	}
 
 	for i, task := range tasks {
@@ -71,6 +72,7 @@ func Test_detectCycle(t *testing.T) {
 		{head: []int{1, 2}, pos: 0, expect: 0},
 		{head: []int{1}, pos: -1, expect: -1},
 		{head: []int{1, 2, 3}, pos: 3, expect: -1},
+		{head: []int{}, pos: 1, expect: -1},
 	}
 
 	for i, task := range tasks {

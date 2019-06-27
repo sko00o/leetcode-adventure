@@ -44,6 +44,9 @@ func Test_removeNthFromEnd(t *testing.T) {
 		{list: []int{1, 2, 3, 4, 5}, n: 2, expect: []int{1, 2, 3, 5}},
 		{list: []int{1}, n: 1, expect: []int{}},
 		{list: []int{1, 2}, n: 2, expect: []int{2}},
+		{list: []int{6}, n: 2, expect: []int{6}},
+		{list: []int{6}, n: -1, expect: []int{6}},
+		{list: []int{}, n: 2, expect: []int{}},
 	}
 
 	for i, task := range tasks {

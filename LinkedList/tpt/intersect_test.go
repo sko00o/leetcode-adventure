@@ -59,6 +59,16 @@ func Test_getIntersectionNode(t *testing.T) {
 			listB: []int{1, 5}, skipB: 2,
 			intersectVal: 0,
 		},
+		{
+			listA: []int{}, skipA: 3,
+			listB: []int{1, 5}, skipB: 2,
+			intersectVal: 0,
+		},
+		{
+			listA: []int{2, 6, 4}, skipA: 3,
+			listB: []int{}, skipB: 2,
+			intersectVal: 0,
+		},
 	}
 
 	for i, task := range tasks {

@@ -6,10 +6,26 @@ import (
 	"testing"
 )
 
+var tasks = []struct {
+	listRaw []byte
+}{
+	{
+		listRaw: []byte(`{"$id":"1","next":{"$id":"2","next":null,"random":{"$ref":"2"},"val":2},"random":{"$ref":"2"},"val":1}`),
+	},
+	{
+		listRaw: []byte(`{}`),
+	},
+}
+
 func makeLinkedListByJSON(raw []byte) (*ListNode, error) {
 	list := new(ListNode)
 	if err := json.Unmarshal(raw, list); err != nil {
 		return nil, err
+	}
+
+	// empty ListNode
+	if list.ID == "" {
+		return nil, nil
 	}
 
 	var head, np *ListNode
@@ -38,14 +54,6 @@ func makeLinkedListByJSON(raw []byte) (*ListNode, error) {
 }
 
 func Test_makeLinkedListByJSON(t *testing.T) {
-	tasks := []struct {
-		listRaw []byte
-	}{
-		{
-			listRaw: []byte(`{"$id":"1","next":{"$id":"2","next":null,"random":{"$ref":"2"},"val":2},"random":{"$ref":"2"},"val":1}`),
-		},
-	}
-
 	for _, task := range tasks {
 		list, err := makeLinkedListByJSON(task.listRaw)
 		if err != nil {
@@ -64,14 +72,6 @@ func Test_makeLinkedListByJSON(t *testing.T) {
 }
 
 func Test_copyRandomList(t *testing.T) {
-	tasks := []struct {
-		listRaw []byte
-	}{
-		{
-			listRaw: []byte(`{"$id":"1","next":{"$id":"2","next":null,"random":{"$ref":"2"},"val":2},"random":{"$ref":"2"},"val":1}`),
-		},
-	}
-
 	for fIdx, f := range []func(*ListNode) *ListNode{copyRandomList} {
 		for i, task := range tasks {
 			h1, err := makeLinkedListByJSON(task.listRaw)

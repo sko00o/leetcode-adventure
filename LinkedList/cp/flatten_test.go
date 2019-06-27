@@ -1,6 +1,7 @@
 package cp
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -108,35 +109,41 @@ func Test_flatten(t *testing.T) {
 			},
 			expect: []int{1, 2, 3, 7, 8, 11, 12, 9, 10, 4, 5, 6},
 		},
+		{
+			input:  []opts{},
+			expect: []int{},
+		},
 	}
 
 	for fIdx, f := range []func(*ListNode) *ListNode{flatten} {
 		for i, task := range tasks {
-			var got []int
-			origin := makeMultilevelDoublyLinkedList(task.input...)
-			ans := f(origin)
-			for prev, p := ans, ans; p != nil; prev, p = p, p.Next {
-				// check pointers
-				if p == ans {
-					if p.Prev != nil {
-						t.Errorf("func #%d, head prev not nil", fIdx)
+			t.Run(fmt.Sprintf("func #%d, task #%d", fIdx, i), func(t *testing.T) {
+				var got []int
+				origin := makeMultilevelDoublyLinkedList(task.input...)
+				ans := f(origin)
+				for prev, p := ans, ans; p != nil; prev, p = p, p.Next {
+					// check pointers
+					if p == ans {
+						if p.Prev != nil {
+							t.Error("head prev not nil")
+						}
+					} else {
+						if p.Prev != prev {
+							t.Errorf("doubly linked list node prev wrong, got: %v, expect: %v", p.Prev, prev)
+						}
 					}
-				} else {
-					if p.Prev != prev {
-						t.Errorf("func #%d, doubly linked list node prev wrong, got: %v, expect: %v", fIdx, p.Prev, prev)
+					if p.Child != nil {
+						t.Error("flatten doubly linked list child not nil")
 					}
+					if ans != origin {
+						t.Error("origin head has been changed")
+					}
+					got = append(got, p.Val)
 				}
-				if p.Child != nil {
-					t.Errorf("func #%d, flatten doubly linked list child not nil", fIdx)
+				if !equal(got, task.expect) {
+					t.Errorf("failed, output: %v, expect: %v", got, task.expect)
 				}
-				if ans != origin {
-					t.Errorf("func #%d, origin head has been changed", fIdx)
-				}
-				got = append(got, p.Val)
-			}
-			if !equal(got, task.expect) {
-				t.Errorf("func #%d, task #%d failed, output: %v, expect: %v", fIdx, i, got, task.expect)
-			}
+			})
 		}
 	}
 }

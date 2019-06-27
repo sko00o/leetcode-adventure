@@ -28,6 +28,30 @@ func TestReverseBetween(t *testing.T) {
 			n:      6,
 			expect: []int{6, 5, 4, 3, 2, 1, 7, 8, 9},
 		},
+		{
+			list:   []int{1, 2, 3},
+			m:      1,
+			n:      1,
+			expect: []int{1, 2, 3},
+		},
+		{
+			list:   []int{1, 2, 3},
+			m:      0,
+			n:      1,
+			expect: []int{1, 2, 3},
+		},
+		{
+			list:   []int{1, 2, 3},
+			m:      2,
+			n:      1,
+			expect: []int{1, 2, 3},
+		},
+		{
+			list:   []int{},
+			m:      1,
+			n:      2,
+			expect: []int{},
+		},
 	}
 
 	for fIdx, f := range []func(*ListNode, int, int) *ListNode{reverseBetween} {
