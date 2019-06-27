@@ -30,7 +30,7 @@ solution:
 
 solution:
 
-* Design Linked List [v1](dll/ll3/ll3.go) [v2](dll/ll4/ll4.go)
+* [Design Linked List](dll/ll3/ll3.go)
 
 ## Conclusion
 

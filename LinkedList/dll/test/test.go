@@ -1,4 +1,4 @@
-package dll
+package test
 
 import (
 	"fmt"
@@ -6,36 +6,23 @@ import (
 
 	. "github.com/smartystreets/goconvey/convey"
 
-	"adventure/linkedlist/dll/ll1"
-	"adventure/linkedlist/dll/ll2"
-	"adventure/linkedlist/dll/ll3"
-	"adventure/linkedlist/dll/ll4"
+	"adventure/LinkedList/dll"
 )
 
-func TestLinkedList(t *testing.T) {
-	tasks := []func() LinkedList{
-		func() LinkedList {
-			out := ll1.Constructor()
-			return &out
-		},
-		func() LinkedList {
-			out := ll2.Constructor()
-			return &out
-		},
-		func() LinkedList {
-			out := ll3.Constructor()
-			return &out
-		},
-		func() LinkedList {
-			out := ll4.Constructor()
-			return &out
-		},
-	}
-	for idx, Constructor := range tasks {
+func CommonTest(t *testing.T, f ...func() dll.LinkedList) {
+	for idx, Constructor := range f {
 		Convey(fmt.Sprintf("task #%d", idx), t, func() {
 			obj := Constructor()
 			Convey("get invalid index will return -1", func() {
 				got := obj.Get(1)
+				So(got, ShouldEqual, -1)
+			})
+
+			Convey("add at invalid index", func() {
+				obj.AddAtIndex(6, 1)
+				got := obj.Get(6)
+				So(got, ShouldEqual, -1)
+				got = obj.Get(0)
 				So(got, ShouldEqual, -1)
 			})
 

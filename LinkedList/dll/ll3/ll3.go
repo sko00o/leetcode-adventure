@@ -13,32 +13,38 @@ type Node struct {
 	prev *Node
 }
 
+// node can not be head in linked list
+// because we can not change head of
+// linked in this func
 func (p *Node) insertPrev(val int) *Node {
-	np := Node{
+	np := &Node{
 		data: val,
 		prev: p.prev,
 		next: p,
 	}
 	if p.prev != nil {
-		p.prev.next = &np
+		p.prev.next = np
 	}
-	p.prev = &np
+	p.prev = np
 
-	return &np
+	return np
 }
 
+// node can not be tail in linked list
+// because we can not change tail of
+// linked in this func
 func (p *Node) insertNext(val int) *Node {
-	np := Node{
+	np := &Node{
 		data: val,
 		prev: p,
 		next: p.next,
 	}
 	if p.next != nil {
-		p.next.prev = &np
+		p.next.prev = np
 	}
-	p.next = &np
+	p.next = np
 
-	return &np
+	return np
 }
 
 /** Initialize your data structure here. */
@@ -66,30 +72,24 @@ func (l *MyLinkedList) Get(index int) int {
 /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
 func (l *MyLinkedList) AddAtHead(val int) {
 	if l.head == nil {
-		l.head = &Node{
-			data: val,
-		}
+		l.head = &Node{data: val}
 		l.tail = l.head
-		l.len++
-		return
+	} else {
+		l.head = l.head.insertPrev(val)
 	}
 
-	l.head = l.head.insertPrev(val)
 	l.len++
 }
 
 /** Append a node of value val to the last element of the linked list. */
 func (l *MyLinkedList) AddAtTail(val int) {
 	if l.tail == nil {
-		l.tail = &Node{
-			data: val,
-		}
+		l.tail = &Node{data: val}
 		l.head = l.tail
-		l.len++
-		return
+	} else {
+		l.tail = l.tail.insertNext(val)
 	}
 
-	l.tail = l.tail.insertNext(val)
 	l.len++
 }
 
@@ -130,37 +130,32 @@ func (l *MyLinkedList) DeleteAtIndex(index int) {
 		if l.head != nil {
 			l.head.prev = nil
 		}
-		l.len--
-		return
-	}
-
-	if index == l.len-1 {
+	} else if index == l.len-1 {
 		l.tail = l.tail.prev
 		if l.tail != nil {
 			l.tail.next = nil
 		}
-		l.len--
-		return
+	} else {
+		p := l.find(index)
+		// p must not be nil, so we don't need to judge
+		p.next.prev = p.prev
+		p.prev.next = p.next
 	}
 
-	p := l.find(index)
-	p.next.prev = p.prev
-	p.prev.next = p.next
 	l.len--
 }
 
+// note: return node maybe nil
 func (l *MyLinkedList) find(index int) (p *Node) {
 	var i int
 	if index <= l.len-index {
-		for i, p = 0, l.head; i <= index; i, p = i+1, p.next {
-			if i == index {
-				return p
-			}
+		// start at head
+		for i, p = 0, l.head; i < index; i, p = i+1, p.next {
+		}
+	} else {
+		// start at tail
+		for i, p = l.len-1, l.tail; i > index; i, p = i-1, p.prev {
 		}
 	}
-
-	for i, p = l.len-1, l.tail; i > index; i, p = i-1, p.prev {
-	}
-
 	return
 }
