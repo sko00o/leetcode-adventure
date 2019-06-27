@@ -1,4 +1,4 @@
-module linkedlist
+module adventure
 
 go 1.12
 

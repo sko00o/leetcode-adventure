@@ -6,10 +6,10 @@ import (
 
 	. "github.com/smartystreets/goconvey/convey"
 
-	"linkedlist/dll/ll1"
-	"linkedlist/dll/ll2"
-	"linkedlist/dll/ll3"
-	"linkedlist/dll/ll4"
+	"adventure/linkedlist/dll/ll1"
+	"adventure/linkedlist/dll/ll2"
+	"adventure/linkedlist/dll/ll3"
+	"adventure/linkedlist/dll/ll4"
 )
 
 func TestLinkedList(t *testing.T) {
