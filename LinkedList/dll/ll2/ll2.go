@@ -18,13 +18,11 @@ func Constructor() MyLinkedList {
 
 /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
 func (l *MyLinkedList) Get(index int) int {
-	if index < 0 || index >= l.len {
-		return -1
-	}
-
-	for i, p := 0, l.head; i <= index && p != nil; i, p = i+1, p.next {
-		if i == index {
-			return p.data
+	if index >= 0 || index < l.len {
+		for i, p := 0, l.head; i <= index && p != nil; i, p = i+1, p.next {
+			if i == index {
+				return p.data
+			}
 		}
 	}
 
