@@ -1,3 +1,6 @@
 # Problems solving on LeetCode
 
-`Keep thinking.`
+Mostly in `Go`, sometimes in `C++`.
+Maybe `python` later.
+
+Try my best to follow `TDD` (Test-driven development).
