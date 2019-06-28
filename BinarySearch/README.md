@@ -11,3 +11,6 @@
 * [Guess Number Higher or Lower] [cpp](bs/tmpl1/cpp/guess.cc)
 * [Search in Rotated Sorted Array](bs/tmpl1/rotate.go)
 
+## Binary Search Template II
+
+* [Template in Go](bs/tmpl2/search.go)
