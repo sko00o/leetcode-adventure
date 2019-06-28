@@ -7,3 +7,7 @@
 ## Binary Search Template I
 
 * [Template in Go](bs/tmpl1/search.go)
+* [Sqrt(x)](bs/tmpl1/sqrt.go)
+* [Guess Number Higher or Lower] [cpp](bs/tmpl1/cpp/guess.cc)
+* [Search in Rotated Sorted Array](bs/tmpl1/rotate.go)
+
