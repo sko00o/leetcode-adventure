@@ -25,36 +25,19 @@ func mySqrt(x int) int {
 	return l
 }
 
-/*func mySqrt1(x int) int {
-	r := x
-	for r*r > x {
-		r = (r + x/r) / 2
+// Newton's Method
+// f(x) = x^m - a
+// x(n+1) = x(n) - (x(n) - a/(x(x)^(m-1)))/m
+// m = 2
+// x(n+1) = (x(n) + a/x(n))/2
+func mySqrt1(x int) int {
+	if x < 2 {
+		return x
+	}
+	r := x >> 1
+	// prevent overflow
+	for r > x/r {
+		r = (r + x/r) >> 1
 	}
 	return r
-}*/
-
-/*func mySqrt2(x int) int {
-	low := 1
-	heigh := x/2+1
-	mid := 1
-	for{
-		if low > heigh{
-			break
-		}
-		mid = (low + heigh)/2
-		temp := mid*mid
-		if temp == x{
-			return mid
-		}else if temp > x{
-			heigh = mid -1
-		}else{
-			low = mid + 1
-		}
-	}
-	return heigh
-}*/
-
-// TODO:
-func NewtonMethod(int) int {
-	return 0
 }

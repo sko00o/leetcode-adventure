@@ -6,7 +6,7 @@ import (
 )
 
 func TestMySqrt(t *testing.T) {
-	testMySqrt(t, mySqrt /*mySqrt1, mySqrt2*/)
+	testMySqrt(t, mySqrt, mySqrt1)
 }
 
 func testMySqrt(t *testing.T, fs ...func(int) int) {
@@ -38,7 +38,36 @@ func testMySqrt(t *testing.T, fs ...func(int) int) {
 					t.Errorf("actual: %d, expect: %d", actual, tc.expect)
 				}
 			})
-
 		}
 	}
 }
+
+func BenchmarkMySqrt(b *testing.B) {
+	benchmarkMySqrt(b, mySqrt)
+}
+
+func BenchmarkMySqrt1(b *testing.B) {
+	benchmarkMySqrt(b, mySqrt1)
+}
+
+func benchmarkMySqrt(b *testing.B, f func(int) int) {
+	for i := 0; i < b.N; i++ {
+		for n := 1<<63 - 1<<10; n < (1<<63 - 1); n += 1 {
+			f(n)
+		}
+		for n := 1; n < 1<<10; n += 1 {
+			f(n)
+		}
+	}
+}
+
+/*
+
+goos: linux
+goarch: amd64
+pkg: adventure/BinarySearch/bs/tmpl1
+BenchmarkMySqrt-8           5000            289058 ns/op
+BenchmarkMySqrt1-8          3000            552816 ns/op
+PASS
+
+*/
