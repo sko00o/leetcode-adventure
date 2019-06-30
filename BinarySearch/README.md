@@ -15,3 +15,4 @@
 
 * [Template in Go](bs/tmpl2/search.go)
 * First Bad Version [cpp](bs/tmpl2/cpp/version.cc) [go](bs/tmpl2/version.go)
+* [Find Peak Element](bs/tmpl2/peak.go)
