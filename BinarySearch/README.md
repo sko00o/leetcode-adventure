@@ -8,9 +8,10 @@
 
 * [Template in Go](bs/tmpl1/search.go)
 * [Sqrt(x)](bs/tmpl1/sqrt.go)
-* [Guess Number Higher or Lower] [cpp](bs/tmpl1/cpp/guess.cc)
+* Guess Number Higher or Lower [cpp](bs/tmpl1/cpp/guess.cc)
 * [Search in Rotated Sorted Array](bs/tmpl1/rotate.go)
 
 ## Binary Search Template II
 
 * [Template in Go](bs/tmpl2/search.go)
+* First Bad Version [cpp](bs/tmpl2/cpp/version.cc) [go](bs/tmpl2/version.go)
