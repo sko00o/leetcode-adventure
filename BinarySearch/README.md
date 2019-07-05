@@ -17,3 +17,7 @@
 * First Bad Version [cpp](bs/tmpl2/cpp/version.cc) [go](bs/tmpl2/version.go)
 * [Find Peak Element](bs/tmpl2/peak.go)
 * [Find Minimum in Rotated Sorted Array](bs/tmpl2/rotate.go)
+
+## Binary Search Template III
+
+* [Template in Go](bs/tmpl2/search.go)
