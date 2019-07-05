@@ -3,6 +3,8 @@ package tmpl3
 import (
 	"fmt"
 	"testing"
+
+	"github.com/google/go-cmp/cmp"
 )
 
 func TestSearchRange(t *testing.T) {
@@ -19,11 +21,8 @@ func TestSearchRange(t *testing.T) {
 	for i, tc := range tcs {
 		t.Run(fmt.Sprintf("task #%d", i), func(t *testing.T) {
 			got := searchRange(tc.nums, tc.target)
-			if len(got) != 2 {
-				t.Fatal("wrong output")
-			}
-			if got[0] != tc.expect[0] || got[1] != tc.expect[1] {
-				t.Errorf("got: %v, expect: %v", got, tc.expect)
+			if d := cmp.Diff(got, tc.expect); d != "" {
+				t.Error(d)
 			}
 		})
 	}
