@@ -23,4 +23,4 @@
 * [Template in Go](bs/tmpl3/search.go)
 * [Search for a Range](bs/tmpl3/range.go)
 * [Find K Closest Elements](bs/tmpl3/closest.go)
-
+* [Find Peak Element](bs/tmpl3/peak.go)

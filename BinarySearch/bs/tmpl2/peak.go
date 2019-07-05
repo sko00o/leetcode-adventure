@@ -1,5 +1,6 @@
 package tmpl2
 
+// time O(log(n))
 func findPeakElement(nums []int) int {
 	if nums == nil {
 		return -1
