@@ -20,4 +20,5 @@
 
 ## Binary Search Template III
 
-* [Template in Go](bs/tmpl2/search.go)
+* [Template in Go](bs/tmpl3/search.go)
+* [Search for a Range](bs/tmpl3/range.go)
