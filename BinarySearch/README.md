@@ -24,3 +24,15 @@
 * [Search for a Range](bs/tmpl3/range.go)
 * [Find K Closest Elements](bs/tmpl3/closest.go)
 * [Find Peak Element](bs/tmpl3/peak.go)
+
+## Template Analysis
+
+## Conclusion
+
+* [Pow(x, n)](bs/con/pow.go)
+* [Valid Perfect Square](bs/con/vsqrt.go)
+* [Find Smallest Letter Greater Than Target](bs/con/letter.go)
+
+## More Practices
+
+## More Practices II
