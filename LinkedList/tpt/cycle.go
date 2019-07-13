@@ -60,3 +60,28 @@ func detectCycle(head *ListNode) *ListNode {
 
 	return nil
 }
+
+// time complexity: O(n)
+func detectCycle1(head *ListNode) *ListNode {
+	sp, fp := head, head
+	for fp != nil {
+		sp, fp = sp.Next, fp.Next
+		if fp != nil {
+			fp = fp.Next
+		} else {
+			return nil
+		}
+
+		if fp == sp {
+			// we can prove that slow point to
+			// the entry point of cycle distances
+			// equal to head to entry point of cycle
+			fp = head
+			for fp != nil && fp != sp {
+				sp, fp = sp.Next, fp.Next
+			}
+			return fp
+		}
+	}
+	return nil
+}

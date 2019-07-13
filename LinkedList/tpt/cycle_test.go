@@ -1,6 +1,7 @@
 package tpt
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -71,14 +72,19 @@ func Test_detectCycle(t *testing.T) {
 		{head: []int{3, 2, 0, -4}, pos: 1, expect: 1},
 		{head: []int{1, 2}, pos: 0, expect: 0},
 		{head: []int{1}, pos: -1, expect: -1},
+		{head: []int{1, 2}, pos: -1, expect: -1},
 		{head: []int{1, 2, 3}, pos: 3, expect: -1},
 		{head: []int{}, pos: 1, expect: -1},
 	}
 
-	for i, task := range tasks {
-		h := makeLinkedListCycle(task.pos, task.head...)
-		if res := getIndex(h, detectCycle(h)); res != task.expect {
-			t.Errorf("task #%d failed, output: %v, expect: %v", i, res, task.expect)
+	for fIdx, f := range []func(*ListNode) *ListNode{detectCycle, detectCycle1} {
+		for i, task := range tasks {
+			t.Run(fmt.Sprintf("func #%d, task #%d", fIdx, i), func(t *testing.T) {
+				h := makeLinkedListCycle(task.pos, task.head...)
+				if res := getIndex(h, f(h)); res != task.expect {
+					t.Errorf("output: %v, expect: %v", res, task.expect)
+				}
+			})
 		}
 	}
 }
