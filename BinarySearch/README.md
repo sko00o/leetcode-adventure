@@ -42,3 +42,5 @@
 * [Two Sum II - Input array is sorted](bs/prac/sum.go)
 
 ## More Practices II
+
+*[Find the Duplicate Number](bs/prac/duplicate.go)
