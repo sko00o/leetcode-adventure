@@ -37,5 +37,8 @@
 
 * [Find Minimum in Rotated Sorted Array](bs/prac/rotate.go)
 * [Find Minimum in Rotated Sorted Array II](bs/prac/rotate.go)
+* [Intersection of Two Arrays](bs/prac/intersection.go)
+* [Intersection of Two Arrays II](bs/prac/intersect.go)
+* [Two Sum II - Input array is sorted](bs/prac/sum.go)
 
 ## More Practices II
