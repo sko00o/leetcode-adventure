@@ -35,4 +35,7 @@
 
 ## More Practices
 
+* [Find Minimum in Rotated Sorted Array](bs/prac/rotate.go)
+* [Find Minimum in Rotated Sorted Array II](bs/prac/rotate.go)
+
 ## More Practices II
