@@ -43,4 +43,5 @@
 
 ## More Practices II
 
-*[Find the Duplicate Number](bs/prac/duplicate.go)
+* [Find the Duplicate Number](bs/prac/duplicate.go)
+* [Median of Two Sorted Arrays](bs/prac/median.go)
