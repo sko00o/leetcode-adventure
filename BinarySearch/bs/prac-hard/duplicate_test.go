@@ -1,4 +1,4 @@
-package prac
+package prac_hard
 
 import (
 	"fmt"

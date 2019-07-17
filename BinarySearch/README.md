@@ -43,5 +43,6 @@
 
 ## More Practices II
 
-* [Find the Duplicate Number](bs/prac/duplicate.go)
-* [Median of Two Sorted Arrays](bs/prac/median.go)
+* [Find the Duplicate Number](bs/prac-hard/duplicate.go)
+* [Median of Two Sorted Arrays](bs/prac-hard/median.go)
+* [ Find K-th Smallest Pair Distance](bs/prac-hard/smallest.go)
