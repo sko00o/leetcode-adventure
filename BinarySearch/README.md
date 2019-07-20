@@ -45,4 +45,5 @@
 
 * [Find the Duplicate Number](bs/prac-hard/duplicate.go)
 * [Median of Two Sorted Arrays](bs/prac-hard/median.go)
-* [ Find K-th Smallest Pair Distance](bs/prac-hard/smallest.go)
+* [Find K-th Smallest Pair Distance](bs/prac-hard/smallest.go)
+* [Split Array Largest Sum](bs/prac-hard/largest.go)
