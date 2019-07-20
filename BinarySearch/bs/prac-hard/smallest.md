@@ -1,5 +1,8 @@
 [译]使用“试错法”解决问题
 
+原文：[Approach the problem using the "trial and error" algorithm](https://leetcode.com/explore/learn/card/binary-search/146/more-practices-ii/1041/discuss/109082/Approach-the-problem-using-the-%22trial-and-error%22-algorithm)
+
+
 **更新**：如果我们把输入的数组按升序排列，这个问题实际上可以改写成找到排序矩阵中的第 K 小的元素，在 `(i, j)` 位置的矩阵元素由 `matrix[i][j] = nums[j] - nums[i]` 得出，还有 `k = K + n*(n+1)/2` 和 `n = nums.length`。这个问题就可以用我[之前发帖](https://leetcode.com/problems/k-th-smallest-prime-fraction/discuss/115819/Summary-of-solutions-for-problems-%22reducible%22-to-LeetCode-378)中的多种算法（优先队列 PriorityQueue， 二分搜索 BinarySearch， 之字形搜索 ZigzagSearch）来解决。
 
 ---
@@ -59,12 +62,65 @@
 
 **五、 如何有效地遍历（或搜索）搜索空间**
 
-TODO:...
+到目前为止，我们知道搜索空间，知道如何构建候选解决方案以及如何通过计数来验证它，我们仍然需要最后一块拼图：如何遍历搜索空间。
+
+当然，我们可以通过尝试从 `0` 到 `d` 的每个整数来进行天真的线性遍历，并选择第一个满足 `count(num) >= K`  的整数 `num`  。时间复杂度将是 `O(nd)` 。然而，假设 `d` 可以比 `n` 大得多，则改算法可能比之前提出的朴素 `O(n^2)` 解更差。
+
+这里关键是观察到候选解决方案是按升序自然排序的，因此可能使用二分搜索。另一个事实是 `count` 函数的非递减属性：给定两个整数 `num1` 和 `num2` 满足 `num1 < num2` ，我们有 `count(num1) <= count(num2)` （我将证明过程留给你）。所以二分搜索步骤如下：
+
+1. 设 `[l,r]` 为当前搜索空间，初始化 `l = 0, r = d` 。
+2. 如果 `l < r` ，计算中间点 `m = (l + r) / 2` 并评估 `count(m)` 。
+3. 如果 `count(m) < K` ，我们丢弃当前搜索空间的左半边，令 `l = m + 1`；否则 `count(m) >= K` 丢弃右半边，令 `r=m` 。
+
+你可能想知道为什么即使 `count(m) == K` ，我们也丢弃搜索空间的右半部分。注意第 K 小的对距离 `num_k` 是满足 `count(num_k) >= K` 的最小整数。当 `count(m) == K` 时，我们知道 `num_k <= K` （但不一定是 `num_k == m`，想想吧！）所以保持右半边没有意义。
 
 **六、 把所有东西放到一起，又称解决方案**
 
+不要被上述分析吓到。一旦理解，最终的解决方案就更容易编写。下面是 Java 版本的试错算法，时间复杂度 `O(nlogd + nlogn)` （别忘了排序），空间复杂度 `O(1)` 。
 
+```Java
+public int smallestDistancePair(int[] nums, int k) {
+    Arrays.sort(nums);
+    
+    int n = nums.length;
+    int l = 0;
+    int r = nums[n - 1] - nums[0];
+    
+    for (int cnt = 0; l < r; cnt = 0) {
+        int m = l + (r - l) / 2;
+        
+        for (int i = 0, j = 0; i < n; i++) {
+            while (j < n && nums[j] <= nums[i] + m) j++;
+            cnt += j - i - 1;
+        }
+        
+        if (cnt < k) {
+            l = m + 1;
+        } else {
+            r = m;
+        }
+    }
+    
+    return l;
+}
+```
 
-## ref 
+---
 
-* [Approach the problem using the "trial and error" algorithm](https://leetcode.com/explore/learn/card/binary-search/146/more-practices-ii/1041/discuss/109082/Approach-the-problem-using-the-%22trial-and-error%22-algorithm)
+最后是 LeetCode 上可以用试错算法解决的问题列表（欢迎添加新的例子）：
+
+* [786. K-th Smallest Prime Fraction](https://leetcode.com/problems/k-th-smallest-prime-fraction/description/)
+
+* [774	Minimize Max Distance to Gas Station](https://leetcode.com/problems/minimize-max-distance-to-gas-station/description/)
+
+* [719. Find K-th Smallest Pair Distance](https://leetcode.com/problems/find-k-th-smallest-pair-distance/description/)
+
+* [668. Kth Smallest Number in Multiplication Table](https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/description/)
+
+* [644. Maximum Average Subarray II](https://leetcode.com/problems/maximum-average-subarray-ii/description/)
+
+* [378. Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/description/)
+
+无论如何，这篇文章只是提醒你，如果你所有其他常见解决方案严重受到不良时间或空间性能的影响，则试错算法值得尝试。此外，我们始终建议你在完全致力于此算法前，快速评估搜索空间大小和潜在的验证算法，以及估计算法复杂度。
+
+希望有帮助，编码愉快！
