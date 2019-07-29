@@ -1,4 +1,4 @@
-package rel
+package mem
 
 // quick with memorization
 func fib(N int) int {

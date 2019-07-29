@@ -1,4 +1,4 @@
-package rel
+package mem
 
 import "testing"
 

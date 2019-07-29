@@ -12,4 +12,5 @@
 
 ## [Duplicate Calculation in Recursion](https://leetcode.com/explore/learn/card/recursion-i/255/recursion-memoization/1495/)
 
-* [Fibnacci Number](rel/fib.go)
+* [Fibnacci Number](mem/fib.go)
+* [Climbing Stairs](mem/climb.go)
