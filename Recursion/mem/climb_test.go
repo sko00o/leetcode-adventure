@@ -21,9 +21,21 @@ func Test_climbStairs(t *testing.T) {
 			args{3},
 			3,
 		},
+		{
+			"ex3",
+			args{4},
+			5,
+		},
 	}
 
-	for fIdx, f := range []func(int) int{climbStairs, climbStairs1} {
+	for fIdx, f := range []func(int) int{
+		climbStairs,
+		climbStairs1,
+		climbStairs2,
+		climbStairs3,
+		climbStairs4,
+		climbStairs5,
+	} {
 		for _, tt := range tests {
 			t.Run(tt.name, func(t *testing.T) {
 				if got := f(tt.args.n); got != tt.want {
