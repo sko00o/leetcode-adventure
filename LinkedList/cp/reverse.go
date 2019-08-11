@@ -1,5 +1,6 @@
 package cp
 
+// reversed iteratively
 // time O(n)
 // space O(1)
 func reverseList(head *ListNode) *ListNode {
@@ -24,15 +25,36 @@ func reverseList1(h *ListNode) *ListNode {
 	return h
 }
 
-// recursive version
+// reversed recursively
 // time O(n)
 // space O(n)
 func reverseList2(h *ListNode) *ListNode {
-	if h != nil && h.Next != nil {
-		p := reverseList2(h.Next)
-		h.Next.Next = h
-		h.Next = nil
-		h = p
+	l, _ := recv(h)
+	return l
+}
+
+func recv(h *ListNode) (l *ListNode, r *ListNode) {
+	// tail
+	if h == nil || h.Next == nil {
+		return h, h
 	}
-	return h
+
+	l, r = recv(h.Next)
+	r.Next, h.Next, r = h, r.Next, h
+	return
+}
+
+func reverseList3(h *ListNode) *ListNode {
+	return recv1(h)
+}
+
+func recv1(h *ListNode) *ListNode {
+	if h == nil || h.Next == nil {
+		return h
+	}
+
+	// new tail will be h.Next
+	newHead := recv1(h.Next)
+	h.Next.Next, h.Next = h, nil
+	return newHead
 }
