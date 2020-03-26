@@ -1,6 +1,6 @@
 module adventure
 
-go 1.12
+go 1.14
 
 require (
 	github.com/google/go-cmp v0.3.0
