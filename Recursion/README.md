@@ -7,8 +7,9 @@
 
 ## [Recurrence Relation](https://leetcode.com/explore/featured/card/recursion-i/251/scenario-i-recurrence-relation/1644/)
 
-* [Pascal's Triangle II](rel/pascal.go)
 * [Reverse Linked List](../LinkedList/cp/reverse.go)
+* [Search in a Binary Search Tree](rel/search.go)
+* [Pascal's Triangle II](rel/pascal.go)
 
 ## [Duplicate Calculation in Recursion](https://leetcode.com/explore/learn/card/recursion-i/255/recursion-memoization/1495/)
 
