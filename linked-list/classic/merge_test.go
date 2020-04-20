@@ -36,15 +36,17 @@ func Test_mergeTwoLists(t *testing.T) {
 		},
 	}
 
-	for fIdx, f := range []func(l1, l2 *ListNode) *ListNode{mergeTwoLists} {
+	for fIdx, f := range []func(l1, l2 *ListNode) *ListNode{
+		mergeTwoLists,
+	} {
 		for i, task := range tasks {
-			h1 := makeLinkedList(task.listA...)
-			h2 := makeLinkedList(task.listB...)
+			h1 := NewLinkedList(task.listA...)
+			h2 := NewLinkedList(task.listB...)
 			var got []int
 			for p := f(h1, h2); p != nil; p = p.Next {
 				got = append(got, p.Val)
 			}
-			if !equal(got, task.expect) {
+			if !Equal(got, task.expect) {
 				t.Errorf("func #%d, task #%d failed, output: %v, expect: %v", fIdx, i, got, task.expect)
 			}
 		}

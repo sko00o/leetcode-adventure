@@ -29,13 +29,13 @@ func Test_rotateRight(t *testing.T) {
 
 	for fIdx, f := range []func(*ListNode, int) *ListNode{rotateRight} {
 		for i, task := range tasks {
-			h1 := makeLinkedList(task.list...)
+			h1 := NewLinkedList(task.list...)
 			h2 := f(h1, task.val)
 			var got []int
 			for p := h2; p != nil; p = p.Next {
 				got = append(got, p.Val)
 			}
-			if !equal(got, task.expect) {
+			if !Equal(got, task.expect) {
 				t.Errorf("func #%d, task #%d failed, output: %v, expect: %v", fIdx, i, got, task.expect)
 			}
 		}

@@ -37,7 +37,7 @@ func Test_isPalindrome(t *testing.T) {
 
 	for fIdx, f := range []func(*ListNode) bool{isPalindrome, isPalindrome1, isPalindrome2} {
 		for i, task := range tasks {
-			h1 := makeLinkedList(task.list...)
+			h1 := NewLinkedList(task.list...)
 			if got := f(h1); got != task.expect {
 				t.Errorf("func #%d, task #%d failed, output: %v, expect: %v", fIdx, i, got, task.expect)
 			}

@@ -18,7 +18,8 @@ type ListNode struct {
 	Random *ListNode `json:"random"`
 }
 
-func makeLinkedList(list ...int) (head *ListNode) {
+// NewLinkedList make a new linked list.
+func NewLinkedList(list ...int) (head *ListNode) {
 	var p *ListNode
 	for _, v := range list {
 		n := &ListNode{
@@ -37,7 +38,8 @@ func makeLinkedList(list ...int) (head *ListNode) {
 	return
 }
 
-func equal(a, b []int) bool {
+// Equal return true if two slice have same elements.
+func Equal(a, b []int) bool {
 	if len(a) != len(b) {
 		return false
 	}

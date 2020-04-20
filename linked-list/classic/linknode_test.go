@@ -32,7 +32,7 @@ func TestEqual(t *testing.T) {
 	}
 
 	for _, tc := range tcs {
-		if actual := equal(tc.a, tc.b); actual != tc.expect {
+		if actual := Equal(tc.a, tc.b); actual != tc.expect {
 			t.Errorf("actual: %v, expect: %v", actual, tc.expect)
 		}
 	}

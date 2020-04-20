@@ -77,7 +77,7 @@ func Test_makeMultilevelDoublyLinkedList(t *testing.T) {
 		var got []int
 		head := makeMultilevelDoublyLinkedList(task.input...)
 		goThroughAllNodes(head, &got)
-		if !equal(got, task.expect) {
+		if !Equal(got, task.expect) {
 			t.Errorf("task #%d failed, output: %v, expect: %v", i, got, task.expect)
 		}
 	}
@@ -140,7 +140,7 @@ func Test_flatten(t *testing.T) {
 					}
 					got = append(got, p.Val)
 				}
-				if !equal(got, task.expect) {
+				if !Equal(got, task.expect) {
 					t.Errorf("failed, output: %v, expect: %v", got, task.expect)
 				}
 			})

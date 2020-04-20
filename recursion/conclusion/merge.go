@@ -4,8 +4,19 @@ import (
 	cp "github.com/sko00o/leetcode-adventure/linked-list/classic"
 )
 
-type ListNode cp.ListNode
+func mergeTwoLists(l1 *cp.ListNode, l2 *cp.ListNode) *cp.ListNode {
+	if l1 == nil {
+		return l2
+	}
+	if l2 == nil {
+		return l1
+	}
 
-func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
-	return nil
+	if l1.Val < l2.Val {
+		l1.Next = mergeTwoLists(l1.Next, l2)
+		return l1
+	}
+
+	l2.Next = mergeTwoLists(l2.Next, l1)
+	return l2
 }
