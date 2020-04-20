@@ -1,4 +1,4 @@
-package cp
+package classic
 
 func flatten(head *ListNode) *ListNode {
 	out, _ := dfs(head, true)

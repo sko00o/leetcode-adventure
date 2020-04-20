@@ -1,4 +1,4 @@
-package cp
+package classic
 
 func copyRandomList(head *ListNode) *ListNode {
 	if head == nil {

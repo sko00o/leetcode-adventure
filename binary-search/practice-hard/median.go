@@ -1,4 +1,4 @@
-package prac_hard
+package practice_hard
 
 // https://leetcode.com/problems/median-of-two-sorted-arrays/solution/
 

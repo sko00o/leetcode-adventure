@@ -1,4 +1,4 @@
-package con
+package conclusion
 
 import (
 	"fmt"

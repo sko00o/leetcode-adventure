@@ -1,4 +1,4 @@
-package rec
+package principle
 
 func reverseString(s []byte) {
 	m := len(s)

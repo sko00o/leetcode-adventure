@@ -1,4 +1,4 @@
-package cp
+package classic
 
 // remove linked list elements
 func removeElements(head *ListNode, val int) *ListNode {

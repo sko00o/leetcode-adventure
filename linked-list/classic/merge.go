@@ -1,4 +1,4 @@
-package cp
+package classic
 
 // Merge two sorted linked lists and return it as a new list
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {

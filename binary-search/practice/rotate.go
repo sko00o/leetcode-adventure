@@ -1,4 +1,4 @@
-package prac
+package practice
 
 func findMin(nums []int) int {
 	left, right := 0, len(nums)-1

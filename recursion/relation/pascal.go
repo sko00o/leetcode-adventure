@@ -1,4 +1,4 @@
-package rel
+package relation
 
 func generate(numRows int) [][]int {
 	tri := make([][]int, numRows)

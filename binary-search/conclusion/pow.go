@@ -1,4 +1,4 @@
-package con
+package conclusion
 
 // recursive
 func myPow(x float64, n int) float64 {

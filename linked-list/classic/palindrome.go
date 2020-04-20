@@ -1,4 +1,4 @@
-package cp
+package classic
 
 func isPalindrome(head *ListNode) bool {
 	if head == nil {

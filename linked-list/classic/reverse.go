@@ -1,4 +1,4 @@
-package cp
+package classic
 
 // reversed iteratively
 // time O(n)

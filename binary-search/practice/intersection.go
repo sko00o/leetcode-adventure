@@ -1,4 +1,4 @@
-package prac
+package practice
 
 import (
 	"sort"

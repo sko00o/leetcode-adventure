@@ -1,4 +1,4 @@
-package con
+package conclusion
 
 func isPerfectSquare(num int) bool {
 	// positive integer num

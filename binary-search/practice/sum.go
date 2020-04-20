@@ -1,4 +1,4 @@
-package prac
+package practice
 
 func twoSum(numbers []int, target int) []int {
 	for idx1, n := range numbers {

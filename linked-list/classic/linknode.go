@@ -1,4 +1,4 @@
-package cp
+package classic
 
 // ListNode definition for linked list node
 type ListNode struct {

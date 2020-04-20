@@ -1,11 +1,11 @@
 package conclusion
 
 import (
-	"adventure/LinkList/cp"
+	cp "github.com/sko00o/leetcode-adventure/linked-list/classic"
 )
 
-type ListNode 
+type ListNode cp.ListNode
 
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
-
+	return nil
 }

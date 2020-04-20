@@ -1,4 +1,4 @@
-package con
+package conclusion
 
 func nextGreatestLetter(letters []byte, target byte) byte {
 	low, high := 0, len(letters)-1

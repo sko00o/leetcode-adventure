@@ -1,4 +1,4 @@
-package prac_hard
+package practice_hard
 
 import (
 	"sort"

@@ -1,4 +1,4 @@
-package ana
+package analysis
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package rel
+package relation
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package ana
+package analysis
 
 // non-tail-recursion
 func sum(ls []int) int {

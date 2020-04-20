@@ -1,4 +1,4 @@
-package bs
+package search
 
 func search(nums []int, target int) int {
 	maxIdx := len(nums) - 1

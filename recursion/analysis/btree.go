@@ -1,4 +1,4 @@
-package ana
+package analysis
 
 // TreeNode is definition for a binary tree node.
 type TreeNode struct {

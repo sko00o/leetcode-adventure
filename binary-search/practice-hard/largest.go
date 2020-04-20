@@ -1,4 +1,4 @@
-package prac_hard
+package practice_hard
 
 // 切分数组 nums 为 m 个连续非空子数组，
 // 算法实现最小化这 m 个子数组的中的最大和。

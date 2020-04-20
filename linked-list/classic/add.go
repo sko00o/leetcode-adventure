@@ -1,4 +1,4 @@
-package cp
+package classic
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	return addWithBase(l1, l2, 10)

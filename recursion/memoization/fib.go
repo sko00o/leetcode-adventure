@@ -1,6 +1,6 @@
-package mem
+package memoization
 
-// quick with memorization
+// quick with memoization
 func fib(N int) int {
 	m := make(map[int]int)
 	var f func(int) int

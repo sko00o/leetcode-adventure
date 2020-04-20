@@ -1,4 +1,4 @@
-package cp
+package classic
 
 func oddEvenList(head *ListNode) *ListNode {
 	if head == nil {
