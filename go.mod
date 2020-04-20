@@ -1,4 +1,4 @@
-module adventure
+module github.com/sko00o/leetcode-adventure
 
 go 1.14
 

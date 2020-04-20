@@ -1,10 +1,10 @@
-package ll2
+package ll1
 
 import (
 	"testing"
 
-	"adventure/LinkedList/dll"
-	"adventure/LinkedList/dll/test"
+	"github.com/sko00o/leetcode-adventure/linked-list/dll"
+	"github.com/sko00o/leetcode-adventure/linked-list/test"
 )
 
 func TestLinkedList(t *testing.T) {

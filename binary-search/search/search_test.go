@@ -3,7 +3,7 @@ package bs
 import (
 	"testing"
 
-	"adventure/BinarySearch/bs/test"
+	"github.com/sko00o/leetcode-adventure/binary-search/test"
 )
 
 func TestSearch(t *testing.T) {

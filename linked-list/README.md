@@ -21,10 +21,10 @@ solution:
 
 solution:
 
-* [Reverse Linked List](cp/reverse.go)
-* [Remove Linked List Elements](cp/remove.go)
-* [Odd Even Linked List](cp/oddeven.go)
-* [Palindrome Linked List](cp/palindrome.go)
+* [Reverse Linked List](classic/reverse.go)
+* [Remove Linked List Elements](classic/remove.go)
+* [Odd Even Linked List](classic/oddeven.go)
+* [Palindrome Linked List](classic/palindrome.go)
 
 ## [Doubly Linked List](https://leetcode.com/explore/learn/card/linked-list/210/doubly-linked-list/1291/)
 
@@ -36,8 +36,8 @@ solution:
 
 solution:
 
-* [Merge Two Sorted Lists](cp/merge.go)
-* [Add Two Numbers](cp/add.go)
-* Flatten a Multilevel Doubly Linked List [cpp](cp/cpp/flatten/flatten.cc) / [go](cp/flatten.go)
-* Copy List with Random Pointer  [cpp](cp/cpp/copy/copy.cc) / [go](cp/copy.go)
-* [Rotate List](cp/rotate.go)
+* [Merge Two Sorted Lists](classic/merge.go)
+* [Add Two Numbers](classic/add.go)
+* Flatten a Multilevel Doubly Linked List [cpp](classic/cpp/flatten/flatten.cc) / [go](classic/flatten.go)
+* Copy List with Random Pointer  [cpp](classic/cpp/copy/copy.cc) / [go](classic/copy.go)
+* [Rotate List](classic/rotate.go)

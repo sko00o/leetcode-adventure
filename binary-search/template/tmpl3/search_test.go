@@ -1,9 +1,9 @@
-package tmpl2
+package tmpl3
 
 import (
 	"testing"
 
-	"adventure/BinarySearch/bs/test"
+	"github.com/sko00o/leetcode-adventure/binary-search/test"
 )
 
 func TestBinarySearch(t *testing.T) {

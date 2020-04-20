@@ -6,7 +6,7 @@ import (
 
 	. "github.com/smartystreets/goconvey/convey"
 
-	"adventure/LinkedList/dll"
+	"github.com/sko00o/leetcode-adventure/linked-list/dll"
 )
 
 func CommonTest(t *testing.T, f ...func() dll.LinkedList) {
