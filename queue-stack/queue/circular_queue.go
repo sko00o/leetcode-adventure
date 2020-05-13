@@ -3,7 +3,7 @@ package queue
 // CircularQueue can reused the wasted storage.
 // It's a more efficient way to implement a queue.
 type CircularQueue interface {
-	Queue
+	IntQueue
 
 	// Get the last item from the queue.
 	// If the queue is empty, return -1.

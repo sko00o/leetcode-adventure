@@ -1,33 +1,20 @@
 package queue
 
-// Queue is FIFO data struct.
-type Queue interface {
-	// Insert an element into the queue.
-	// Return true if the operation is successful.
-	EnQueue(x int) bool
-
-	// Delete an element from the queue.
-	// Return true if the operation is successful.
-	DeQueue() bool
-
-	// Get the front item from the queue. 
-	// If the queue is empty, return -1.
-	Front() int
-
-	// Checks whether the queue is empty or not.
-	IsEmpty() bool
+// Queue is a FIFO Data Structure.
+type Queue struct {
+	data []interface{}
 }
 
-type myQueue struct {
-	data []int
-}
-
-func (q *myQueue) EnQueue(x int) bool {
-	q.data = append(q.data, x)
+// EnQueue insert an element into the queue.
+// Return nil true if the operation is successful.
+func (q *Queue) EnQueue(val interface{}) bool {
+	q.data = append(q.data, val)
 	return true
 }
 
-func (q *myQueue) DeQueue() bool {
+// DeQueue delete an element from the queue.
+// Return nil true if the operation is successful.
+func (q *Queue) DeQueue() bool {
 	if q.IsEmpty() {
 		return false
 	}
@@ -36,13 +23,17 @@ func (q *myQueue) DeQueue() bool {
 	return true
 }
 
-func (q myQueue) Front() int {
+// Front get the front item from the queue.
+// If the queue is empty, return nil.
+func (q *Queue) Front() interface{} {
 	if q.IsEmpty() {
-		return -1
+		return nil
 	}
+
 	return q.data[0]
 }
 
-func (q myQueue) IsEmpty() bool {
+// IsEmpty checks whether the queue is empty or not.
+func (q *Queue) IsEmpty() bool {
 	return len(q.data) == 0
 }

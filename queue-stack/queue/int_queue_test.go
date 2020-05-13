@@ -6,9 +6,9 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestQueue(t *testing.T) {
-	for _, q := range []Queue{
-		new(myQueue),
+func TestIntQueue(t *testing.T) {
+	for _, q := range []IntQueue{
+		new(myIntQueue),
 		NewMyCircularQueue(2),
 	} {
 		t.Run("common test", func(t *testing.T) {
