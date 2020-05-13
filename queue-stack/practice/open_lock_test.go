@@ -1,6 +1,7 @@
 package practice
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -45,6 +46,14 @@ func Test_nextStats(t *testing.T) {
 				d: []int{0, -1, -1, 1},
 			},
 			want: "0991",
+		},
+		{
+			name: "test 5",
+			args: args{
+				s: "1234",
+				d: []int{99, -23, 23, -99},
+			},
+			want: "0965",
 		},
 	}
 	for _, tt := range tests {
@@ -99,10 +108,18 @@ func Test_openLock(t *testing.T) {
 			want: -1,
 		},
 	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := openLock(tt.args.deadends, tt.args.target); got != tt.want {
-				t.Errorf("openLock() = %v, want %v", got, tt.want)
+
+	for idx, f := range []func(deadends []string, target string) int{
+		openLock,
+		openLock1,
+	} {
+		t.Run(fmt.Sprintf("func#%d", idx), func(t *testing.T) {
+			for _, tt := range tests {
+				t.Run(tt.name, func(t *testing.T) {
+					if got := f(tt.args.deadends, tt.args.target); got != tt.want {
+						t.Errorf("openLock() = %v, want %v", got, tt.want)
+					}
+				})
 			}
 		})
 	}
