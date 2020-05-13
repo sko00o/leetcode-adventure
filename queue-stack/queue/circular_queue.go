@@ -20,13 +20,19 @@ type MyCircularQueue struct {
 	tail int
 }
 
-// Constructor set the size of the queue to be k.
-func Constructor(k int) *MyCircularQueue {
+// NewMyCircularQueue is factory for circular queue.
+func NewMyCircularQueue(k int) *MyCircularQueue {
 	return &MyCircularQueue{
 		data: make([]int, k),
 		head: -1,
 		tail: -1,
 	}
+}
+
+// Constructor set the size of the queue to be k.
+func Constructor(k int) MyCircularQueue {
+	q := NewMyCircularQueue(k)
+	return *q
 }
 
 // EnQueue insert an element into the circular queue.

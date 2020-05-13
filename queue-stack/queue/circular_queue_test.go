@@ -8,7 +8,7 @@ import (
 
 func TestCircularQueue(t *testing.T) {
 	for _, q := range []CircularQueue{
-		Constructor(3), // set the size to be 3
+		NewMyCircularQueue(3), // set the size to be 3
 	} {
 		t.Run("common test", func(t *testing.T) {
 			assert := require.New(t)

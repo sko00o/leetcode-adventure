@@ -9,7 +9,7 @@ import (
 func TestQueue(t *testing.T) {
 	for _, q := range []Queue{
 		new(myQueue),
-		Constructor(2),
+		NewMyCircularQueue(2),
 	} {
 		t.Run("common test", func(t *testing.T) {
 			assert := require.New(t)
