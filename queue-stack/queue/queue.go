@@ -10,7 +10,8 @@ type Queue interface {
 	// Return true if the operation is successful.
 	deQueue() bool
 
-	// Get the front item from the queue.
+	// Get the front item from the queue. 
+	// If the queue is empty, return -1.
 	Front() int
 
 	// Checks whether the queue is empty or not.
@@ -36,6 +37,9 @@ func (q *myQueue) deQueue() bool {
 }
 
 func (q myQueue) Front() int {
+	if q.isEmpty() {
+		return -1
+	}
 	return q.data[0]
 }
 
