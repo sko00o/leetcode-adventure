@@ -4,31 +4,31 @@ package queue
 type Queue interface {
 	// Insert an element into the queue.
 	// Return true if the operation is successful.
-	enQueue(x int) bool
+	EnQueue(x int) bool
 
 	// Delete an element from the queue.
 	// Return true if the operation is successful.
-	deQueue() bool
+	DeQueue() bool
 
 	// Get the front item from the queue. 
 	// If the queue is empty, return -1.
 	Front() int
 
 	// Checks whether the queue is empty or not.
-	isEmpty() bool
+	IsEmpty() bool
 }
 
 type myQueue struct {
 	data []int
 }
 
-func (q *myQueue) enQueue(x int) bool {
+func (q *myQueue) EnQueue(x int) bool {
 	q.data = append(q.data, x)
 	return true
 }
 
-func (q *myQueue) deQueue() bool {
-	if q.isEmpty() {
+func (q *myQueue) DeQueue() bool {
+	if q.IsEmpty() {
 		return false
 	}
 
@@ -37,12 +37,12 @@ func (q *myQueue) deQueue() bool {
 }
 
 func (q myQueue) Front() int {
-	if q.isEmpty() {
+	if q.IsEmpty() {
 		return -1
 	}
 	return q.data[0]
 }
 
-func (q myQueue) isEmpty() bool {
+func (q myQueue) IsEmpty() bool {
 	return len(q.data) == 0
 }

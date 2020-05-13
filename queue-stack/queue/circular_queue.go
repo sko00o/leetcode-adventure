@@ -10,29 +10,32 @@ type CircularQueue interface {
 	Rear() int
 
 	// Checks whether the circular queue is full or not.
-	isFull() bool
+	IsFull() bool
 }
 
-type myCircularQueue struct {
+// MyCircularQueue is circular queue struct.
+type MyCircularQueue struct {
 	data []int
 	head int
 	tail int
 }
 
-// MyCircularQueue is a constructor, set the size of the queue to be k.
-func MyCircularQueue(k int) CircularQueue {
-	return &myCircularQueue{
+// Constructor set the size of the queue to be k.
+func Constructor(k int) *MyCircularQueue {
+	return &MyCircularQueue{
 		data: make([]int, k),
 		head: -1,
 		tail: -1,
 	}
 }
 
-func (q *myCircularQueue) enQueue(x int) bool {
-	if q.isFull() {
+// EnQueue insert an element into the circular queue.
+// Return true if the operation is successful.
+func (q *MyCircularQueue) EnQueue(x int) bool {
+	if q.IsFull() {
 		return false
 	}
-	if q.isEmpty() {
+	if q.IsEmpty() {
 		q.head = 0
 	}
 
@@ -41,8 +44,10 @@ func (q *myCircularQueue) enQueue(x int) bool {
 	return true
 }
 
-func (q *myCircularQueue) deQueue() bool {
-	if q.isEmpty() {
+// DeQueue delete an element from the circular queue.
+// Return true if the operation is successful.
+func (q *MyCircularQueue) DeQueue() bool {
+	if q.IsEmpty() {
 		return false
 	}
 
@@ -55,26 +60,30 @@ func (q *myCircularQueue) deQueue() bool {
 	return true
 }
 
-func (q myCircularQueue) Front() int {
-	if q.isEmpty() {
+// Front get the front item from the queue.
+func (q *MyCircularQueue) Front() int {
+	if q.IsEmpty() {
 		return -1
 	}
 
 	return q.data[q.head]
 }
 
-func (q myCircularQueue) Rear() int {
-	if q.isEmpty() {
+// Rear get the last item from the queue.
+func (q *MyCircularQueue) Rear() int {
+	if q.IsEmpty() {
 		return -1
 	}
 
 	return q.data[q.tail]
 }
 
-func (q myCircularQueue) isEmpty() bool {
+// IsEmpty checks whether the circular queue is empty or not.
+func (q *MyCircularQueue) IsEmpty() bool {
 	return q.head == -1
 }
 
-func (q myCircularQueue) isFull() bool {
+// IsFull checks whether the circular queue is full or not.
+func (q *MyCircularQueue) IsFull() bool {
 	return (q.tail+1)%len(q.data) == q.head
 }
