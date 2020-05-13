@@ -16,3 +16,8 @@ solution:
 
 * [Template 1](queue/bfs/tmpl1/bfs.go)
 * [Template 2](queue/bfs/tmpl2/bfs.go)
+
+solution:
+
+* [Walls and Gates]()
+* [Number of Islands](practice/island.go)
