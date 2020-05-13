@@ -71,3 +71,36 @@ func numIslands(grid [][]byte) int {
 
 	return cnt
 }
+
+func numIslands1(grid [][]byte) int {
+	var cnt int
+	for i := range grid {
+		for j := range grid[0] {
+			cnt += distroyIsland(grid, i, j)
+		}
+	}
+	return cnt
+}
+
+func distroyIsland(grid [][]byte, i, j int) int {
+	var li, lj int
+	if li = len(grid); li == 0 {
+		return 0
+	}
+	if lj = len(grid[0]); lj == 0 {
+		return 0
+	}
+	if i < 0 || i >= li || j < 0 || j >= lj || grid[i][j] == '0' {
+		return 0
+	}
+	grid[i][j] = '0'
+	for _, d := range []struct{ i, j int }{
+		{0, 1},  // right
+		{1, 0},  // down
+		{0, -1}, // left
+		{-1, 0}, // top
+	} {
+		distroyIsland(grid, i+d.i, j+d.j)
+	}
+	return 1
+}

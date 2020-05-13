@@ -1,6 +1,9 @@
 package practice
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_numIslands(t *testing.T) {
 	type args struct {
@@ -50,15 +53,18 @@ func Test_numIslands(t *testing.T) {
 		},
 	}
 
-	for _, f := range []func(grid [][]byte) int{
+	for idx, f := range []func(grid [][]byte) int{
 		numIslands,
+		numIslands1,
 	} {
-		for _, tt := range tests {
-			t.Run(tt.name, func(t *testing.T) {
-				if got := f(tt.args.grid); got != tt.want {
-					t.Errorf("numIslands() = %v, want %v", got, tt.want)
-				}
-			})
-		}
+		t.Run(fmt.Sprint("func#d", idx), func(t *testing.T) {
+			for _, tt := range tests {
+				t.Run(tt.name, func(t *testing.T) {
+					if got := f(tt.args.grid); got != tt.want {
+						t.Errorf("numIslands() = %v, want %v", got, tt.want)
+					}
+				})
+			}
+		})
 	}
 }
