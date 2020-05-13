@@ -2,13 +2,13 @@ package queue
 
 // Queue is a FIFO Data Structure.
 type Queue struct {
-	data []interface{}
+	Data []interface{}
 }
 
 // EnQueue insert an element into the queue.
 // Return nil true if the operation is successful.
 func (q *Queue) EnQueue(val interface{}) bool {
-	q.data = append(q.data, val)
+	q.Data = append(q.Data, val)
 	return true
 }
 
@@ -19,7 +19,7 @@ func (q *Queue) DeQueue() bool {
 		return false
 	}
 
-	q.data = q.data[1:]
+	q.Data = q.Data[1:]
 	return true
 }
 
@@ -30,10 +30,10 @@ func (q *Queue) Front() interface{} {
 		return nil
 	}
 
-	return q.data[0]
+	return q.Data[0]
 }
 
 // IsEmpty checks whether the queue is empty or not.
 func (q *Queue) IsEmpty() bool {
-	return len(q.data) == 0
+	return len(q.Data) == 0
 }
