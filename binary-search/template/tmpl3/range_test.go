@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/google/go-cmp/cmp"
+	"github.com/stretchr/testify/require"
 )
 
 func TestSearchRange(t *testing.T) {
@@ -20,10 +20,9 @@ func TestSearchRange(t *testing.T) {
 	}
 	for i, tc := range tcs {
 		t.Run(fmt.Sprintf("task #%d", i), func(t *testing.T) {
+			assert := require.New(t)
 			got := searchRange(tc.nums, tc.target)
-			if d := cmp.Diff(got, tc.expect); d != "" {
-				t.Error(d)
-			}
+			assert.Equal(tc.expect, got)
 		})
 	}
 }

@@ -3,6 +3,6 @@ module github.com/sko00o/leetcode-adventure
 go 1.14
 
 require (
-	github.com/google/go-cmp v0.3.0
-	github.com/smartystreets/goconvey v0.0.0-20190330032615-68dc04aab96a
+	github.com/smartystreets/goconvey v1.6.4
+	github.com/stretchr/testify v1.5.1
 )

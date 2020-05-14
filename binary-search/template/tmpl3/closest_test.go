@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/google/go-cmp/cmp"
+	"github.com/stretchr/testify/require"
 )
 
 func Test_findClosestElements(t *testing.T) {
@@ -26,13 +26,15 @@ func Test_findClosestElements(t *testing.T) {
 		{[]int{0, 0, 0, 1, 3, 5, 6, 7, 8, 8}, 2, 2, []int{1, 3}},
 	}
 
-	for fIdx, f := range []func([]int, int, int) []int{findClosestElements, findClosestElements1} {
+	for fIdx, f := range []func([]int, int, int) []int{
+		findClosestElements,
+		findClosestElements1,
+	} {
 		for i, tc := range tcs {
 			t.Run(fmt.Sprintf("task #%d, func #%d", i, fIdx), func(t *testing.T) {
+				assert := require.New(t)
 				got := f(tc.nums, tc.k, tc.x)
-				if d := cmp.Diff(got, tc.expect); d != "" {
-					t.Error(d)
-				}
+				assert.Equal(tc.expect, got)
 			})
 		}
 	}

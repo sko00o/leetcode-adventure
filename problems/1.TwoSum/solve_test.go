@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/google/go-cmp/cmp"
+	"github.com/stretchr/testify/require"
 )
 
 func Test_twoSum(t *testing.T) {
@@ -35,13 +35,16 @@ func Test_twoSum(t *testing.T) {
 		},
 	}
 
-	for fIdx, f := range []func([]int, int) []int{twoSum, twoSum1, twoSum2} {
+	for fIdx, f := range []func([]int, int) []int{
+		twoSum,
+		twoSum1,
+		twoSum2,
+	} {
 		for idx, tc := range tcs {
 			t.Run(fmt.Sprintf("func #%d, task #%d", fIdx, idx), func(t *testing.T) {
+				assert := require.New(t)
 				got := f(tc.nums, tc.target)
-				if d := cmp.Diff(got, tc.expect); d != "" {
-					t.Fatal(d)
-				}
+				assert.Equal(tc.expect, got)
 			})
 		}
 	}
