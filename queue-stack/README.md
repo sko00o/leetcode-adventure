@@ -22,3 +22,4 @@ solution:
 * [Walls and Gates]()
 * [Number of Islands](practice/island.go)
 * [Open the Lock](practice/open_lock.go)
+* [Perfect Square](practice/square.go)
