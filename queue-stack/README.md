@@ -32,3 +32,4 @@ solution:
 
 * [Valid Parentheses](practice/parentheses.go)
 * [Daily Temperatures](practice/daily_temp.go)
+* [Evaluate Reverse Polish Notation](practice/reverse_polish.go)
