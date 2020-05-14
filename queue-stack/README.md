@@ -29,3 +29,5 @@ solution:
 * [Design Min Stack](stack/min_stack.go)
 
 solution:
+
+* [Valid Parentheses](practice/parentheses.go)
