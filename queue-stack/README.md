@@ -23,3 +23,6 @@ solution:
 * [Number of Islands](practice/island.go)
 * [Open the Lock](practice/open_lock.go)
 * [Perfect Square](practice/square.go)
+
+## [Stack: Last-in-first-out Data Structure](https://leetcode.com/explore/learn/card/queue-stack/230/usage-stack/1369/)
+
