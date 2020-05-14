@@ -31,3 +31,4 @@ solution:
 solution:
 
 * [Valid Parentheses](practice/parentheses.go)
+* [Daily Temperatures]()

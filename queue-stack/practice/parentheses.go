@@ -29,3 +29,22 @@ outer:
 
 	return len(stack) == 0
 }
+
+func isValid1(s string) bool {
+	m := map[rune]rune{
+		')': '(',
+		']': '[',
+		'}': '{',
+	}
+
+	var stack []rune
+	for _, c := range s {
+		if ls := len(stack); ls != 0 && m[c] == stack[ls-1] {
+			stack = stack[:ls-1]
+		} else {
+			stack = append(stack, c)
+		}
+	}
+
+	return len(stack) == 0
+}
