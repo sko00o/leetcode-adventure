@@ -60,6 +60,7 @@ func Test_numSquares(t *testing.T) {
 
 	for idx, f := range []func(int) int{
 		numSquares,
+		numSquares1,
 	} {
 		t.Run(fmt.Sprintf("func#%d", idx), func(t *testing.T) {
 			for _, tt := range tests {

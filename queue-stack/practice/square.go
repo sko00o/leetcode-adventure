@@ -1,5 +1,6 @@
 package practice
 
+// BFS
 func numSquares(n int) int {
 	var queue []int
 	var step int
@@ -32,4 +33,20 @@ func numSquares(n int) int {
 	}
 
 	return -1
+}
+
+// DP
+func numSquares1(n int) int {
+	if n < 1 {
+		return -1
+	}
+	dp := make([]int, n+1)
+	for i := 1; i <= n; i++ {
+		for j := 1; j*j <= i; j++ {
+			if dp[i] == 0 || dp[i] > dp[i-j*j]+1 {
+				dp[i] = dp[i-j*j] + 1
+			}
+		}
+	}
+	return dp[n]
 }
