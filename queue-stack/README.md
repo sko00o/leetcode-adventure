@@ -2,9 +2,8 @@
 
 ## [Queue: First-in-first-out Data Structure](https://leetcode.com/explore/learn/card/queue-stack/228/first-in-first-out-data-structure/1355/)
 
-[Design Circular Queue](https://leetcode.com/explore/learn/card/queue-stack/228/first-in-first-out-data-structure/1337/)
-
-[Implement Circular Queue in Go](queue/circular_queue.go)
+* [Implement Queue in Go](queue/queue.go)
+* [Design Circular Queue](queue/circular_queue.go)
 
 solution:
 
@@ -26,3 +25,7 @@ solution:
 
 ## [Stack: Last-in-first-out Data Structure](https://leetcode.com/explore/learn/card/queue-stack/230/usage-stack/1369/)
 
+* [Implement Stack in Go](stack/stack.go)
+* [Design Min Stack](stack/min_stack.go)
+
+solution:
