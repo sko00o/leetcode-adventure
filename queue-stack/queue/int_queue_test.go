@@ -13,6 +13,7 @@ func TestIntQueue(t *testing.T) {
 	} {
 		t.Run("common test", func(t *testing.T) {
 			assert := require.New(t)
+			assert.Equal(-1, q.Front())
 			assert.True(q.IsEmpty())
 			assert.True(q.EnQueue(1))
 			assert.False(q.IsEmpty())
@@ -24,6 +25,7 @@ func TestIntQueue(t *testing.T) {
 			assert.True(q.DeQueue())
 			assert.True(q.IsEmpty())
 			assert.False(q.DeQueue())
+			assert.Equal(-1, q.Front())
 		})
 	}
 }

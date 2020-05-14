@@ -9,6 +9,7 @@ import (
 func TestQueue(t *testing.T) {
 	var q Queue
 	assert := require.New(t)
+	assert.Nil(q.Front())
 	assert.True(q.IsEmpty())
 	assert.True(q.EnQueue(1))
 	assert.False(q.IsEmpty())
@@ -20,4 +21,5 @@ func TestQueue(t *testing.T) {
 	assert.True(q.DeQueue())
 	assert.True(q.IsEmpty())
 	assert.False(q.DeQueue())
+	assert.Nil(q.Front())
 }
