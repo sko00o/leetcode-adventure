@@ -1,5 +1,14 @@
 package practice
 
+import (
+	"github.com/sko00o/leetcode-adventure/queue-stack/queue"
+)
+
+// Queue defines a queue for interface{} type.
+type Queue struct {
+	queue.Queue
+}
+
 func openLock(deadends []string, target string) int {
 	if len(target) != 4 {
 		return -1

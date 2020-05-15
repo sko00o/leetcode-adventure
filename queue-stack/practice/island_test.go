@@ -75,7 +75,6 @@ func Test_numIslands(t *testing.T) {
 		numIslands,
 		numIslands1,
 		numIslands2,
-		numIslands3,
 	} {
 		t.Run(fmt.Sprint("func#d", idx), func(t *testing.T) {
 			for _, tt := range tests {
