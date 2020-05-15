@@ -10,7 +10,7 @@ type Node struct {
 	Neighbors []*Node
 }
 
-// NodeQueue is queue for Node.
+// NodeQueue is queue for Nodes.
 type NodeQueue struct {
 	queue.Queue
 }

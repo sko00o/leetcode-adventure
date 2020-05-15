@@ -33,3 +33,13 @@ solution:
 * [Valid Parentheses](practice/parentheses.go)
 * [Daily Temperatures](practice/daily_temp.go)
 * [Evaluate Reverse Polish Notation](practice/reverse_polish.go)
+
+## [Stack and DFS](https://leetcode.com/explore/learn/card/queue-stack/232/practical-application-stack/1377/)
+
+[DFS - Template I](https://leetcode.com/explore/learn/card/queue-stack/232/practical-application-stack/1384/)
+
+* [Template - Recursion](stack/dfs/tmpl1/dfs.go)
+
+solution:
+
+* [Number of Islands](practice/island.go)
