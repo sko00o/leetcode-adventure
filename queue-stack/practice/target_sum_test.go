@@ -1,6 +1,9 @@
 package practice
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_findTargetSumWays(t *testing.T) {
 	type args struct {
@@ -20,11 +23,27 @@ func Test_findTargetSumWays(t *testing.T) {
 			},
 			want: 5,
 		},
+		{
+			name: "test 1",
+			args: args{
+				nums: []int{0, 0, 0, 0, 0, 0, 0, 0, 1},
+				S:    1,
+			},
+			want: 256,
+		},
 	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := findTargetSumWays(tt.args.nums, tt.args.S); got != tt.want {
-				t.Errorf("findTargetSumWays() = %v, want %v", got, tt.want)
+
+	for idx, f := range []func([]int, int) int{
+		findTargetSumWays,
+		findTargetSumWays1,
+	} {
+		t.Run(fmt.Sprintf("func #%d", idx), func(t *testing.T) {
+			for _, tt := range tests {
+				t.Run(tt.name, func(t *testing.T) {
+					if got := f(tt.args.nums, tt.args.S); got != tt.want {
+						t.Errorf("findTargetSumWays() = %v, want %v", got, tt.want)
+					}
+				})
 			}
 		})
 	}
