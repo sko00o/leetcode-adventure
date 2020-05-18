@@ -51,6 +51,11 @@ solution:
 ## [Conclusion](https://leetcode.com/explore/learn/card/queue-stack/239/conclusion/1386/)
 
 * Implement Queue using Stacks
-    * [approach 1](conclusion/queue-using-stack/impl1/my_queue.go)
-    * [approach 2](conclusion/queue-using-stack/impl2/my_queue.go)
+    * [approach 1, 2 Stacks, Push O(n), Pop O(1)](conclusion/queue-using-stack/impl1/my_queue.go)
+    * [approach 2, 2 Stacks, Push O(1), Pop O(1)~O(n)](conclusion/queue-using-stack/impl2/my_queue.go)
 
+* Implement Stack using Queues
+    * [approach 1, 2 Queues, Push O(1), Pop O(n)](conclusion/stack-using-queue/impl1/my_stack.go)
+    * [approach 2, 2 Queues, Push O(n), Pop O(1)](conclusion/stack-using-queue/impl2/my_stack.go)
+    * [approach 3, 1 Queue, Push O(n), Pop O(1)](conclusion/stack-using-stack/impl3/my_stack.go)
+    
