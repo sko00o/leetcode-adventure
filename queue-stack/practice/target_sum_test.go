@@ -31,11 +31,24 @@ func Test_findTargetSumWays(t *testing.T) {
 			},
 			want: 256,
 		},
+		{
+			name: "test 2",
+			args: args{
+				nums: []int{},
+				S:    0,
+			},
+			want: 1,
+		},
 	}
 
 	for idx, f := range []func([]int, int) int{
 		findTargetSumWays,
 		findTargetSumWays1,
+		findTargetSumWays2,
+		findTargetSumWays31,
+		findTargetSumWays32,
+		findTargetSumWays33,
+		findTargetSumWays34,
 	} {
 		t.Run(fmt.Sprintf("func #%d", idx), func(t *testing.T) {
 			for _, tt := range tests {
