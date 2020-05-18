@@ -46,3 +46,4 @@ solution:
 * [Number of Islands](practice/island.go)
 * [Clone Graph](practice/clone_graph.go)
 * [Target Sum](practice/target_sum.go)
+* [Binary Tree Inorder Traversal](practice/inorder_traversal.go)
