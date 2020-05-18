@@ -50,4 +50,4 @@ solution:
 
 ## [Conclusion](https://leetcode.com/explore/learn/card/queue-stack/239/conclusion/1386/)
 
-* [Implement Queue using Stacks](conclusion/queue-in-stack/impl_queue_using_stack.go)
+* [Implement Queue using Stacks](conclusion/queue-using-stack/impl_queue_using_stack.go)
