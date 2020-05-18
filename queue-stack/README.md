@@ -47,3 +47,7 @@ solution:
 * [Clone Graph](practice/clone_graph.go)
 * [Target Sum](practice/target_sum.go)
 * [Binary Tree Inorder Traversal](practice/inorder_traversal.go)
+
+## [Conclusion](https://leetcode.com/explore/learn/card/queue-stack/239/conclusion/1386/)
+
+* [Implement Queue using Stacks](conclusion/queue-in-stack/impl_queue_using_stack.go)
