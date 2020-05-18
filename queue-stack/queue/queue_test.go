@@ -13,6 +13,7 @@ func TestQueue(t *testing.T) {
 	assert.True(q.IsEmpty())
 	assert.True(q.EnQueue(1))
 	assert.False(q.IsEmpty())
+	assert.Equal(1, q.Front())
 	assert.True(q.EnQueue("hello"))
 	assert.False(q.IsEmpty())
 	assert.Equal(1, q.Front())

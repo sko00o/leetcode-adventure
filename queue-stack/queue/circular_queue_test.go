@@ -12,8 +12,10 @@ func TestCircularQueue(t *testing.T) {
 	} {
 		t.Run("common test", func(t *testing.T) {
 			assert := require.New(t)
-			assert.True(q.EnQueue(1))  // return true
-			assert.True(q.EnQueue(2))  // return true
+			assert.True(q.EnQueue(1)) // return true
+			assert.Equal(1, q.Front())
+			assert.True(q.EnQueue(2)) // return true
+			assert.Equal(1, q.Front())
 			assert.True(q.EnQueue(3))  // return true
 			assert.False(q.EnQueue(4)) // return false, the queue is full
 			assert.Equal(3, q.Rear())  // return 3
