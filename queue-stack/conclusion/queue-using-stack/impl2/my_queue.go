@@ -1,4 +1,4 @@
-package conclusion
+package impl2
 
 import "github.com/sko00o/leetcode-adventure/queue-stack/stack"
 
@@ -9,7 +9,8 @@ type Stack struct {
 
 // MyQueue is a queue using stack.
 type MyQueue struct {
-	S [2]Stack
+	S     [2]Stack
+	front int
 }
 
 // Constructor return MyQueue object.
@@ -20,24 +21,28 @@ func Constructor() MyQueue {
 }
 
 // Push element x to the back of queue.
+// time complexity: O(1)
+// space complexity : O(n), we need additional memory to store the queue elements.
 func (q *MyQueue) Push(x int) {
-	for !q.S[1].IsEmpty() {
-		q.S[0].Push(q.S[1].Top())
-		q.S[1].Pop()
+	if q.S[0].IsEmpty() {
+		q.front = x
 	}
-
 	q.S[0].Push(x)
 }
 
 // Pop removes the element from in front of queue and returns that element.
+// time complexity: Amortized O(1), Worst-case O(n)
+// space complexity: O(1)
 func (q *MyQueue) Pop() int {
 	if q.Empty() {
 		return -1
 	}
 
-	for !q.S[0].IsEmpty() {
-		q.S[1].Push(q.S[0].Top())
-		q.S[0].Pop()
+	if q.S[1].IsEmpty() {
+		for !q.S[0].IsEmpty() {
+			q.S[1].Push(q.S[0].Top())
+			q.S[0].Pop()
+		}
 	}
 
 	res := q.S[1].Top().(int)
@@ -46,20 +51,23 @@ func (q *MyQueue) Pop() int {
 }
 
 // Peek get the front element.
+// time complexity: O(1)
+// space complexity: O(1)
 func (q *MyQueue) Peek() int {
 	if q.Empty() {
 		return -1
 	}
 
-	for !q.S[0].IsEmpty() {
-		q.S[1].Push(q.S[0].Top())
-		q.S[0].Pop()
+	if q.S[1].IsEmpty() {
+		return q.front
 	}
 
 	return q.S[1].Top().(int)
 }
 
 // Empty returns whether the queue is empty.
+// time complexity: O(1)
+// space complexity: O(1)
 func (q *MyQueue) Empty() bool {
 	return q.S[0].IsEmpty() && q.S[1].IsEmpty()
 }
