@@ -39,6 +39,7 @@ solution:
 [DFS - Template I](https://leetcode.com/explore/learn/card/queue-stack/232/practical-application-stack/1384/)
 
 * [Template - Recursion](stack/dfs/tmpl1/dfs.go)
+* [Template - using an explicit stack](stack/dfs/tmpl2/dfs.go)
 
 solution:
 

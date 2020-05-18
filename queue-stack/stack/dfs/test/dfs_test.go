@@ -6,6 +6,7 @@ import (
 
 	"github.com/sko00o/leetcode-adventure/queue-stack/stack/dfs"
 	"github.com/sko00o/leetcode-adventure/queue-stack/stack/dfs/tmpl1"
+	"github.com/sko00o/leetcode-adventure/queue-stack/stack/dfs/tmpl2"
 	"github.com/stretchr/testify/require"
 )
 
@@ -45,6 +46,7 @@ func TestBFS(t *testing.T) {
 
 	for idx, DFS := range []func(root, target *dfs.Node) bool{
 		tmpl1.DFS,
+		tmpl2.DFS,
 	} {
 		t.Run(strconv.Itoa(idx), func(t *testing.T) {
 			for idx, tst := range tests {
