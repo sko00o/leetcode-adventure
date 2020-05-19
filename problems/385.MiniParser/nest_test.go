@@ -21,21 +21,21 @@ func TestNestedInteger(t *testing.T) {
 	ni.Add(ni1)
 	assert.False(ni.IsInteger())
 	assert.Equal([]*NestedInteger{
-		{data: 1},
-		{data: 2},
+		{1},
+		{2},
 	}, ni.GetList())
 
 	ni.Add(NestedInteger{
-		data: []*NestedInteger{
-			{data: 1},
+		[]*NestedInteger{
+			{3},
 		},
 	})
 	assert.Equal([]*NestedInteger{
-		{data: 1},
-		{data: 2},
+		{1},
+		{2},
 		{
-			data: []*NestedInteger{
-				{data: 1},
+			[]*NestedInteger{
+				{3},
 			},
 		},
 	}, ni.GetList())

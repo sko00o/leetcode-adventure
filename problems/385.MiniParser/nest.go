@@ -26,12 +26,15 @@ func (n *NestedInteger) SetInteger(value int) {
 
 // Add set this NestedInteger to hold a nested list and adds a nested integer to it.
 func (n *NestedInteger) Add(elem NestedInteger) {
+	if n.data == nil {
+		n.data = []*NestedInteger{}
+	}
 	switch data := n.data.(type) {
 	case []*NestedInteger:
 		n.data = append(data, &elem)
 	case int:
 		n.data = []*NestedInteger{
-			{data: data}, 
+			{data: data},
 			&elem,
 		}
 	}
