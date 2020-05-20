@@ -20,3 +20,4 @@ solutions:
 solutions:
 
 - [Remove Element](problems/remove_elements.go)
+- [Remove Duplicates from Sorted Array](problems/remove_duplicates.go)
