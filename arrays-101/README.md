@@ -13,3 +13,4 @@ solutions:
 solutions:
 
 - [Duplicate Zeros](problems/duplicate_zeros.go)
+- [Merge Sorted Array](problems/merge_sorted_array.go)
