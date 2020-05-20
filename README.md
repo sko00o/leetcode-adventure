@@ -2,8 +2,7 @@
 
 ![Go](https://github.com/sko00o/leetcode-adventure/workflows/Go/badge.svg)
 
-Mostly in `Go`, sometimes in `C++`.
-Maybe `python` later.
+Mostly in `Go`.
 
 Try my best to follow `TDD` (Test-driven development).
 
@@ -13,16 +12,18 @@ Try my best to follow `TDD` (Test-driven development).
 
 Progress:
 
+- [ ] [Arrays 101]()
 - [x] [Linked List](linked-list/README.md)
-- [x] [Binary Search](binary-search/README.md)
+- [ ] [Binary Tree]()
 - [x] [Recursion I](recursion/README.md)
 - [ ] [Recursion II]()
-- [x] [Queue & Stack](queue-stack/README.md)
-- [ ] [Arrays 101]()
-- [ ] [Binary Tree]()
-- [ ] [Decision Tree]()
-- [ ] [Binary Search Tree]()
+- [ ] [Machine Learning 101]()
+- [x] [Binary Search](binary-search/README.md)
+- [ ] [Introduction to Ruby]()
 - [ ] [N-ary Tree]()
+- [ ] [Binary Search Tree]()
 - [ ] [Trie]()
 - [ ] [Hash Table]()
 - [ ] [Array and String]()
+- [x] [Queue & Stack](queue-stack/README.md)
+- [ ] [Decision Tree]()
