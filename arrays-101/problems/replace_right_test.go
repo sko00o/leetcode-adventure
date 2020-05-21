@@ -31,7 +31,7 @@ func Test_replaceElements(t *testing.T) {
 				t.Run(tt.name, func(t *testing.T) {
 					var arr = make([]int, len(tt.args.arr))
 					copy(arr, tt.args.arr)
-					if got := f(tt.args.arr); !reflect.DeepEqual(got, tt.want) {
+					if got := f(arr); !reflect.DeepEqual(got, tt.want) {
 						t.Errorf("replaceElements() = %v, want %v", got, tt.want)
 					}
 				})
