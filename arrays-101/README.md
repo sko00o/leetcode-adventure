@@ -21,3 +21,9 @@ solutions:
 
 - [Remove Element](problems/remove_elements.go)
 - [Remove Duplicates from Sorted Array](problems/remove_duplicates.go)
+
+## [Search in an Array](https://leetcode.com/explore/learn/card/fun-with-arrays/527/searching-for-items-in-an-array/3296/)
+
+solutions:
+
+- [Check If N and Its Double Exist](problems/check_exists.go)
