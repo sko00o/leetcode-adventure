@@ -27,3 +27,4 @@ solutions:
 solutions:
 
 - [Check If N and Its Double Exist](problems/check_exists.go)
+- [Valid Mountain Array](problems/mountain_array.go)
