@@ -45,6 +45,7 @@ func Test_removeDuplicates(t *testing.T) {
 
 	for idx, f := range []func([]int) int{
 		removeDuplicates,
+		removeDuplicates1,
 	} {
 		t.Run(fmt.Sprintf("func#%d", idx), func(t *testing.T) {
 			for _, tt := range tests {
