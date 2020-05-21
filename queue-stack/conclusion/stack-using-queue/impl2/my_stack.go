@@ -9,15 +9,15 @@ type Queue struct {
 
 // MyStack is a stack using queue.
 type MyStack struct {
-	Q   Queue
-	tmp Queue
+	Q   *Queue
+	tmp *Queue
 }
 
 // Constructor return MyStack object.
 func Constructor() MyStack {
 	return MyStack{
-		Q:   Queue{},
-		tmp: Queue{},
+		Q:   &Queue{},
+		tmp: &Queue{},
 	}
 }
 
