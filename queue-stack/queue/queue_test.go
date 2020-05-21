@@ -11,6 +11,7 @@ import (
 func TestQueue(t *testing.T) {
 	for idx, q := range []Queue{
 		&SliceQueue{},
+		&LinkQueue{},
 	} {
 		t.Run(fmt.Sprintf("Queue#%d", idx), func(t *testing.T) {
 			assert := require.New(t)
