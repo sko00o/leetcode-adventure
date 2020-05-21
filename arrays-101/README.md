@@ -28,3 +28,9 @@ solutions:
 
 - [Check If N and Its Double Exist](problems/check_exists.go)
 - [Valid Mountain Array](problems/mountain_array.go)
+
+## [In-Place Array Operations Introduction](https://leetcode.com/explore/learn/card/fun-with-arrays/511/in-place-operations/3257/)
+
+solutions:
+
+- [Replace Elements with Greatest Element on Right Side](problems/replace_right.go)
