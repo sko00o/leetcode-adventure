@@ -36,3 +36,4 @@ solutions:
 - [Replace Elements with Greatest Element on Right Side](problems/replace_right.go)
 - [Remove Duplicates from Sorted Array](problems/remove_duplicates.go)
 - [Move Zeroes](problems/move_zeros.go)
+- [Sort Array By Parity](problems/sort_parity.go)
