@@ -1,13 +1,19 @@
 package queue
 
+import "sync"
+
 // Queue is a FIFO Data Structure.
 type Queue struct {
 	Data []interface{}
+	lock sync.Mutex
 }
 
 // EnQueue insert an element into the queue.
 // Return nil true if the operation is successful.
 func (q *Queue) EnQueue(val interface{}) bool {
+	q.lock.Lock()
+	defer q.lock.Unlock()
+
 	q.Data = append(q.Data, val)
 	return true
 }
@@ -15,6 +21,9 @@ func (q *Queue) EnQueue(val interface{}) bool {
 // DeQueue delete an element from the queue.
 // Return nil true if the operation is successful.
 func (q *Queue) DeQueue() bool {
+	q.lock.Lock()
+	defer q.lock.Unlock()
+	
 	if q.IsEmpty() {
 		return false
 	}

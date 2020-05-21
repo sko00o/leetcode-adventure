@@ -10,12 +10,12 @@ type Node struct {
 
 // NodeStack is stack for Nodes.
 type NodeStack struct {
-	stack.Stack
+	stack.SliceStack
 }
 
 // Push insert a Node into the stack.
 func (s *NodeStack) Push(n *Node) {
-	s.Stack.Push(n)
+	s.SliceStack.Push(n)
 }
 
 // Top get the top Node from the stack.

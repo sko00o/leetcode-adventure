@@ -6,7 +6,7 @@ import (
 
 // Stack is a LIFO Data Structure.
 type Stack struct {
-	stack.Stack
+	stack.SliceStack
 }
 
 // MyQueue is a queue using stack.

@@ -1,18 +1,38 @@
 package stack
 
+import (
+	"sync"
+)
+
 // Stack is a LIFO Data Structure.
-type Stack struct {
+type Stack interface {
+	Push(interface{})
+	Pop() bool
+	Top() interface{}
+	IsEmpty() bool
+	Size() int
+}
+
+// SliceStack is a Stack implement based on slice.
+type SliceStack struct {
 	Data []interface{}
+	lock sync.Mutex
 }
 
 // Push insert an element into the stack.
-func (s *Stack) Push(val interface{}) {
+func (s *SliceStack) Push(val interface{}) {
+	s.lock.Lock()
+	defer s.lock.Unlock()
+
 	s.Data = append(s.Data, val)
 }
 
 // Pop delete an element from the stack.
 // Return true if the operation is successful.
-func (s *Stack) Pop() bool {
+func (s *SliceStack) Pop() bool {
+	s.lock.Lock()
+	defer s.lock.Unlock()
+
 	if s.IsEmpty() {
 		return false
 	}
@@ -22,7 +42,7 @@ func (s *Stack) Pop() bool {
 }
 
 // Top get the top item from the stack.
-func (s *Stack) Top() interface{} {
+func (s *SliceStack) Top() interface{} {
 	if s.IsEmpty() {
 		return nil
 	}
@@ -30,6 +50,11 @@ func (s *Stack) Top() interface{} {
 }
 
 // IsEmpty checks whether the stack is empty or not.
-func (s *Stack) IsEmpty() bool {
+func (s *SliceStack) IsEmpty() bool {
 	return len(s.Data) == 0
+}
+
+// Size return length of the stack.
+func (s *SliceStack) Size() int {
+	return len(s.Data)
 }
