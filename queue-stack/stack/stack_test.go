@@ -11,6 +11,7 @@ import (
 func TestStack(t *testing.T) {
 	for idx, s := range []Stack{
 		&SliceStack{},
+		&LinkStack{},
 	} {
 		t.Run(fmt.Sprintf("Stack#%d", idx), func(t *testing.T) {
 			assert := require.New(t)

@@ -58,3 +58,64 @@ func (s *SliceStack) IsEmpty() bool {
 func (s *SliceStack) Size() int {
 	return len(s.Data)
 }
+
+// LinkStack is a Stack implement based on linked list.
+type LinkStack struct {
+	root *LinkNode
+	size int
+	lock sync.Mutex
+}
+
+// LinkNode defines node structure in linked list.
+type LinkNode struct {
+	Next *LinkNode
+	Data interface{}
+}
+
+// Push insert an element into the stack.
+func (s *LinkStack) Push(val interface{}) {
+	s.lock.Lock()
+	defer s.lock.Unlock()
+
+	s.root = &LinkNode{
+		Data: val,
+		Next: s.root,
+	}
+
+	s.size++
+}
+
+// Pop delete an element from the stack.
+// Return true if the operation is successful.
+func (s *LinkStack) Pop() bool {
+	s.lock.Lock()
+	defer s.lock.Unlock()
+
+	if s.IsEmpty() {
+		return false
+	}
+
+	s.root = s.root.Next
+	s.size--
+
+	return true
+}
+
+// Top get the top item from the stack.
+func (s *LinkStack) Top() interface{} {
+	if s.IsEmpty() {
+		return nil
+	}
+
+	return s.root.Data
+}
+
+// IsEmpty checks whether the stack is empty or not.
+func (s *LinkStack) IsEmpty() bool {
+	return s.size == 0
+}
+
+// Size return length of the stack.
+func (s *LinkStack) Size() int {
+	return s.size
+}
