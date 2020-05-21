@@ -19,15 +19,15 @@ type IntQueue interface {
 }
 
 type myIntQueue struct {
-	Queue
+	SliceQueue
 }
 
 func (q *myIntQueue) EnQueue(x int) bool {
-	return q.Queue.EnQueue(x)
+	return q.SliceQueue.EnQueue(x)
 }
 
-func (q myIntQueue) Front() int {
-	val, ok := q.Queue.Front().(int)
+func (q *myIntQueue) Front() int {
+	val, ok := q.SliceQueue.Front().(int)
 	if !ok {
 		return -1
 	}

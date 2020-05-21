@@ -6,7 +6,7 @@ import (
 
 // Queue defines a queue for interface{} type.
 type Queue struct {
-	queue.Queue
+	queue.SliceQueue
 }
 
 func openLock(deadends []string, target string) int {

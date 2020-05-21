@@ -4,7 +4,7 @@ import "github.com/sko00o/leetcode-adventure/queue-stack/queue"
 
 // Queue is a FIFO Data Structure.
 type Queue struct {
-	queue.Queue
+	queue.SliceQueue
 }
 
 // MyStack is a stack using queue.

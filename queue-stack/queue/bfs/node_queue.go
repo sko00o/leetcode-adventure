@@ -12,17 +12,17 @@ type Node struct {
 
 // NodeQueue is queue for Nodes.
 type NodeQueue struct {
-	queue.Queue
+	queue.SliceQueue
 }
 
 // EnQueue insert Node into queue.
 func (q *NodeQueue) EnQueue(n *Node) bool {
-	return q.Queue.EnQueue(n)
+	return q.SliceQueue.EnQueue(n)
 }
 
 // Front get the front node from the queue.
 func (q *NodeQueue) Front() *Node {
-	val, ok := q.Queue.Front().(*Node)
+	val, ok := q.SliceQueue.Front().(*Node)
 	if !ok {
 		return nil
 	}
