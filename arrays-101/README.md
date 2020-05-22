@@ -37,3 +37,5 @@ solutions:
 - [Remove Duplicates from Sorted Array](problems/remove_duplicates.go)
 - [Move Zeroes](problems/move_zeros.go)
 - [Sort Array By Parity](problems/sort_parity.go)
+- [Squares of a Sorted Array](problems/squares_array.go)
+
