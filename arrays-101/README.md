@@ -44,4 +44,5 @@ solutions:
 solutions:
 
 - [Height Checker](problems/height_checker.go)
-
+- [Max Consecutive One II]()
+- [Third Maximum Number](problems/third_max.go)
