@@ -39,3 +39,9 @@ solutions:
 - [Sort Array By Parity](problems/sort_parity.go)
 - [Squares of a Sorted Array](problems/squares_array.go)
 
+## [Conclusion](https://leetcode.com/explore/learn/card/fun-with-arrays/523/conclusion/3220/)
+
+solutions:
+
+- [Height Checker](problems/height_checker.go)
+
