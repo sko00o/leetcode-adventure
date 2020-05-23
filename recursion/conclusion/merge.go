@@ -4,6 +4,7 @@ import (
 	cp "github.com/sko00o/leetcode-adventure/linked-list/classic"
 )
 
+// recursion version
 func mergeTwoLists(l1 *cp.ListNode, l2 *cp.ListNode) *cp.ListNode {
 	if l1 == nil {
 		return l2

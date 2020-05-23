@@ -24,5 +24,6 @@
 
 ## [Conclusion - Recursion I](https://leetcode.com/explore/featured/card/recursion-i/253/conclusion/1650/)
 
-* Merge Two Sorted Lists [(recursion version)](conclusion/merge.go)
+* [Merge Two Sorted Lists](conclusion/merge.go)
+* [K-th Symbol in Grammar](conclusion/grammar.go)
 
