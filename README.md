@@ -2,7 +2,7 @@
 
 ![Go](https://github.com/sko00o/leetcode-adventure/workflows/Go/badge.svg)
 
-Mostly in `Go`.
+Solve in `Go`.
 
 Try my best to follow `TDD` (Test-driven development).
 

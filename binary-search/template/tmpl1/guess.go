@@ -16,7 +16,7 @@ func guessNumber(n int) int {
 
 	low, high := 1, n
 	for low < high {
-		mid := low + ((high - low) >> 1)
+		mid := low + (high-low)>>1
 		switch guess(mid) {
 		case 0:
 			return mid

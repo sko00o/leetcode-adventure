@@ -8,8 +8,7 @@ func firstBadVersion(n int) int {
 	low, high := 1, n
 	for low < high {
 		mid := low + (high-low)>>1
-		r1 := isBadVersion(mid)
-		if r1 {
+		if isBadVersion(mid) {
 			high = mid
 		} else {
 			low = mid + 1
