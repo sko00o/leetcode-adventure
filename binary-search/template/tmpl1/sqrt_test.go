@@ -52,10 +52,10 @@ func BenchmarkMySqrt1(b *testing.B) {
 
 func benchmarkMySqrt(b *testing.B, f func(int) int) {
 	for i := 0; i < b.N; i++ {
-		for n := 1<<63 - 1<<10; n < (1<<63 - 1); n += 1 {
+		for n := 1<<63 - 1<<10; n < (1<<63 - 1); n++ {
 			f(n)
 		}
-		for n := 1; n < 1<<10; n += 1 {
+		for n := 1; n < 1<<10; n++ {
 			f(n)
 		}
 	}
