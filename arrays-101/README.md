@@ -44,6 +44,6 @@ solutions:
 solutions:
 
 - [Height Checker](problems/height_checker.go)
-- [Max Consecutive One II]()
+- Max Consecutive One II **[Locked]**
 - [Third Maximum Number](problems/third_max.go)
 - [Find All Numbers Disappeared in an Array](problems/find_all.go)

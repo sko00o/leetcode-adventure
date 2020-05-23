@@ -8,13 +8,13 @@
 
 * [Template in Go](template/tmpl1/search.go)
 * [Sqrt(x)](template/tmpl1/sqrt.go)
-* Guess Number Higher or Lower [cpp](template/tmpl1/cpp/guess.cc)
+* [Guess Number Higher or Lower](template/tmpl1/guess.go)
 * [Search in Rotated Sorted Array](template/tmpl1/rotate.go)
 
 ## Binary Search Template II
 
 * [Template in Go](template/tmpl2/search.go)
-* First Bad Version [cpp](template/tmpl2/cpp/version.cc) [go](template/tmpl2/version.go)
+* [First Bad Version](template/tmpl2/version.go)
 * [Find Peak Element](template/tmpl2/peak.go)
 * [Find Minimum in Rotated Sorted Array](template/tmpl2/rotate.go)
 
@@ -26,6 +26,9 @@
 * [Find Peak Element](template/tmpl3/peak.go)
 
 ## Template Analysis
+
+* Closest Binary Search Tree Value **[Locked]**
+* Search in a Sorted Array of Unknown Size **[Locked]**
 
 ## Conclusion
 

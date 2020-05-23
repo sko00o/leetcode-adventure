@@ -7,7 +7,7 @@
 
 solution:
 
-* [Moving Average from Data Stream]()
+* Moving Average from Data Stream **[Locked]**
 
 ## [Queue and BFS](https://leetcode.com/explore/learn/card/queue-stack/231/practical-application-queue/1376/)
 
@@ -18,7 +18,7 @@ solution:
 
 solution:
 
-* [Walls and Gates]()
+* Walls and Gates **[Locked]**
 * [Number of Islands](practice/island.go)
 * [Open the Lock](practice/open_lock.go)
 * [Perfect Square](practice/square.go)

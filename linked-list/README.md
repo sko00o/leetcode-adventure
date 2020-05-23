@@ -38,6 +38,7 @@ solution:
 
 * [Merge Two Sorted Lists](classic/merge.go)
 * [Add Two Numbers](classic/add.go)
-* Flatten a Multilevel Doubly Linked List [cpp](classic/cpp/flatten/flatten.cc) / [go](classic/flatten.go)
-* Copy List with Random Pointer  [cpp](classic/cpp/copy/copy.cc) / [go](classic/copy.go)
+* [Flatten a Multilevel Doubly Linked List](classic/flatten.go)
+* Insert into a Cyclic Sorted List **[Locked]**
+* [Copy List with Random Pointer](classic/copy.go)
 * [Rotate List](classic/rotate.go)
