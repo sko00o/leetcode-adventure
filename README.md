@@ -12,7 +12,7 @@ Try my best to follow `TDD` (Test-driven development).
 
 Progress:
 
-- [ ] [Arrays 101](arrays-101/README.md)
+- [x] [Arrays 101](arrays-101/README.md)
 - [x] [Linked List](linked-list/README.md)
 - [ ] [Binary Tree]()
 - [x] [Recursion I](recursion/README.md)
