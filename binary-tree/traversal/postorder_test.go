@@ -1,4 +1,4 @@
-package practice
+package traversal
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func Test_inorderTraversal(t *testing.T) {
+func Test_postorderTraversal(t *testing.T) {
 	type args struct {
 		root *TreeNode
 	}
@@ -28,7 +28,7 @@ func Test_inorderTraversal(t *testing.T) {
 					},
 				},
 			},
-			want: []int{1, 3, 2},
+			want: []int{3, 2, 1},
 		},
 		{
 			name: "test 1",
@@ -49,28 +49,25 @@ func Test_inorderTraversal(t *testing.T) {
 					},
 				},
 			},
-			want: []int{1, 2, 3, 4, 5},
+			want: []int{1, 3, 5, 4, 2},
 		},
 		{
 			name: "empty",
-			want: nil,
 		},
 	}
-
 	for idx, f := range []func(*TreeNode) []int{
-		inorderTraversal,
-		inorderTraversal1,
-		inorderTraversal2,
+		postorderTraversal,
+		postorderTraversal1,
+		postorderTraversal2,
 	} {
 		t.Run(fmt.Sprintf("func#%d", idx), func(t *testing.T) {
 			for _, tt := range tests {
 				t.Run(tt.name, func(t *testing.T) {
 					if got := f(tt.args.root); !reflect.DeepEqual(got, tt.want) {
-						t.Errorf("inorderTraversal() = %v, want %v", got, tt.want)
+						t.Errorf("postorderTraversal() = %v, want %v", got, tt.want)
 					}
 				})
 			}
 		})
 	}
-
 }
