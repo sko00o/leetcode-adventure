@@ -16,3 +16,4 @@ Reference for `Morris traversal`
 
 - [Maximum Depth of Binary Tree](problems/max_depth.go)
 - [Symmetric Tree](problems/symmetric_tree.go)
+- [Path Sum](problems/path_sum.go)
