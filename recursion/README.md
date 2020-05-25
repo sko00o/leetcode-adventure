@@ -19,7 +19,7 @@
 ## [Complexity Analysis](https://leetcode.com/explore/learn/card/recursion-i/256/complexity-analysis/)
 
 * [Tail Recursion](analysis/sum.go)
-* [Maximum Depth of Binary Tree](analysis/btree.go)
+* [Maximum Depth of Binary Tree](../binary-tree/problems/max_depth.go)
 * [Pow(x, n)](../binary-search/conclusion/pow.go)
 
 ## [Conclusion - Recursion I](https://leetcode.com/explore/featured/card/recursion-i/253/conclusion/1650/)
