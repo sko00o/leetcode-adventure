@@ -140,3 +140,59 @@ func thirdMax2(nums []int) int {
 
 	return res[0]
 }
+
+// use set + min heap.
+func thirdMax3(nums []int) int {
+	k := 3
+	var set = make(map[int]bool)
+
+	var i, bsize int
+	base := make([]int, 0, k)
+	for ; i < len(nums) && bsize < k; i++ {
+		if set[nums[i]] {
+			continue
+		}
+		set[nums[i]] = true
+		base = append(base, nums[i])
+		bsize++
+	}
+
+	for j := bsize / 2; j >= 0; j-- {
+		minHeapify(base, j, bsize)
+	}
+	for ; i < len(nums); i++ {
+		if nums[i] <= base[0] {
+			continue
+		}
+		if set[nums[i]] {
+			continue
+		}
+		set[nums[i]] = true
+
+		base[0] = nums[i]
+		minHeapify(base, 0, k)
+	}
+
+	if bsize < k {
+		return base[bsize-1]
+	}
+	return base[0]
+}
+
+func minHeapify(nums []int, start, end int) {
+	root := start
+	child := 2*root + 1
+	for child < end {
+		if child+1 < end && nums[child] > nums[child+1] {
+			child++
+		}
+
+		if nums[root] <= nums[child] {
+			break
+		}
+
+		nums[root], nums[child] = nums[child], nums[root]
+		root = child
+		child = 2*root + 1
+	}
+}
