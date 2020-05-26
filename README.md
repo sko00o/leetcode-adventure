@@ -8,7 +8,7 @@ Try my best to follow `TDD` (Test-driven development).
 
 ---
 
-[Learning on LeetCode](https://leetcode.com/explore/learn/)
+## [LeetCode Learning Cards](https://leetcode.com/explore/learn/)
 
 Progress:
 
@@ -27,3 +27,7 @@ Progress:
 - [ ] [Array and String]()
 - [x] [Queue & Stack](queue-stack/README.md)
 - [ ] [Decision Tree]()
+
+## More
+
+- [ ] [Sort](sort/README.md)
