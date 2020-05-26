@@ -1,5 +1,12 @@
 package classic
 
+/*
+Notes:
+○ 判断回文
+	§ 快慢指针，找到链表中点，后半段链表反转，再双指针，分别从头节点和中部节点逐个验证。
+	  见 isPalindrome2 。
+*/
+
 func isPalindrome(head *ListNode) bool {
 	if head == nil {
 		return true

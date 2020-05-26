@@ -2,6 +2,14 @@ package impl3
 
 import "github.com/sko00o/leetcode-adventure/queue-stack/queue"
 
+/*
+Notes:
+○ 用队列模拟栈
+	§ 可以只用一个队列，压栈操作时，判断队列长度是否大于 1，
+	  如果大于1，将n-1个元素出队再入队，以达到将队尾元素排到队头的效果。
+	  出栈操作时，直接出队即可。压栈操作的时间复杂度是 O(n) 。
+*/
+
 // Queue is a FIFO Data Structure.
 type Queue struct {
 	queue.SliceQueue

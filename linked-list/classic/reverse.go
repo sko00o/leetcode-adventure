@@ -1,5 +1,13 @@
 package classic
 
+/*
+Notes:
+○ 反转单链表
+	§ 一轮遍历，pn := p->next, p->next = p->next->next, pn->next = start, start = pn，
+	  注意维护头节点的指针，之后返回。
+	§ 递归实现，方便理解，但由于递归栈，空间复杂度 O(1)，见 reverseList3 。
+*/
+
 // reversed iteratively
 // time O(n)
 // space O(1)

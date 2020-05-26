@@ -2,6 +2,14 @@ package impl2
 
 import "github.com/sko00o/leetcode-adventure/queue-stack/stack"
 
+/*
+○ 用栈模拟队列
+	§ 需要两个栈，分别记为 s1 和 s2，入队操作时，把元素压入 s1；
+	  出队操作，先检查 s2 是否为空，如果不为空，直接从 s2 出栈，
+	  如果为空，把 s1 中所有元素依次出栈并压入 s2 再从 s2 出栈。
+	  出栈的时间复杂度是 O(1) 到 O(n)。
+*/
+
 // Stack is a LIFO Data Structure.
 type Stack struct {
 	stack.SliceStack

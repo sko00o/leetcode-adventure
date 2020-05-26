@@ -2,6 +2,14 @@ package impl2
 
 import "github.com/sko00o/leetcode-adventure/queue-stack/queue"
 
+/*
+Notes:
+○ 用队列模拟栈
+	§ 若使用两个队列，分别记为 Q 和 tmp ，压栈操作时，元素入队 tmp，
+	  然后 Q 元素全部出队再入队 tmp， 最后交换 Q 和 tmp；出栈操作时，
+	  保持所有元素都在 Q，方便维护，从 Q 出队。
+*/
+
 // Queue is a FIFO Data Structure.
 type Queue struct {
 	queue.SliceQueue
