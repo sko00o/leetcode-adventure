@@ -36,7 +36,7 @@ func NewMaxHeap(n int) *MaxHeap {
 }
 
 // Push one element into the heap.
-// time complexity: O(1) ~ O(nlogn)
+// time complexity: O(1) ~ O(NlogN)
 func (h *MaxHeap) Push(x int) {
 	if h.size == 0 {
 		h.data[0] = x
@@ -60,7 +60,7 @@ func (h *MaxHeap) Push(x int) {
 
 // Pop top element out of the heap.
 // Return true if the operation is successful.
-// time complexity: O(1) ~ O(logn)
+// time complexity: O(1) ~ O(logN)
 func (h *MaxHeap) Pop() bool {
 	if h.size == 0 {
 		return false

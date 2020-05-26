@@ -3,6 +3,7 @@
 ## Heap Sort
 
 - [Heap implementation](heap/heap.go)
+- [bottom to top build a heap](heap/bottom_to_top.go)
 
 ## Ref
 
