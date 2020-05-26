@@ -31,12 +31,21 @@ func Test_findKthLargest(t *testing.T) {
 			},
 			want: 4,
 		},
+		{
+			name: "test 1",
+			args: args{
+				nums: []int{-1, 2, 0},
+				k:    1,
+			},
+			want: 2,
+		},
 	}
 
 	for idx, f := range []func([]int, int) int{
 		findKthLargest,
 		findKthLargest1,
 		findKthLargest2,
+		findKthLargest3,
 	} {
 		t.Run(fmt.Sprintf("func#%d", idx), func(t *testing.T) {
 			for _, tt := range tests {
