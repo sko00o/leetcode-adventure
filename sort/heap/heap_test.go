@@ -27,14 +27,18 @@ func TestMaxHeapSort(t *testing.T) {
 			assert := require.New(t)
 
 			h := NewMaxHeap(len(tt.arr))
-			for _, n := range tt.arr {
+			for idx, n := range tt.arr {
 				h.Push(n)
+				assert.Equal(idx+1, h.Size())
 			}
 
 			var got []int
+			var cnt = len(tt.arr)
 			for !h.IsEmpty() {
 				got = append(got, h.Top())
 				h.Pop()
+				cnt--
+				assert.Equal(cnt, h.Size())
 			}
 			assert.Equal(tt.want, got)
 

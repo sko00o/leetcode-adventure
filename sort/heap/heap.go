@@ -21,6 +21,11 @@ func (h *Heap) IsEmpty() bool {
 	return h.size == 0
 }
 
+// Size return the elements length in the heap.
+func (h *Heap) Size() int {
+	return h.size
+}
+
 // MaxHeap defines a max heap.
 type MaxHeap struct {
 	Heap
@@ -47,7 +52,7 @@ func (h *MaxHeap) Push(x int) {
 	curr := h.size
 	for curr > 0 {
 		parent := (curr - 1) / 2
-		// 当前值比上一级小不需要上浮
+		// 当前值比上一级小，不需要上浮
 		if x <= h.data[parent] {
 			break
 		}
