@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
 func Test_sortedSquares(t *testing.T) {
@@ -86,6 +88,7 @@ func Test_sortedSquares(t *testing.T) {
 		sortedSquares2,
 		sortedSquares3,
 		sortedSquares4,
+		sortedSquares5,
 	} {
 		t.Run(fmt.Sprintf("func#%d", idx), func(t *testing.T) {
 			for _, tt := range tests {
@@ -97,6 +100,107 @@ func Test_sortedSquares(t *testing.T) {
 					}
 				})
 			}
+		})
+	}
+}
+
+func Test_reverse(t *testing.T) {
+	type args struct {
+		arr []int
+	}
+	tests := []struct {
+		name string
+		args args
+		want []int
+	}{
+		{
+			name: "test 1",
+			args: args{
+				arr: []int{1, 2, 3, 4, 5},
+			},
+			want: []int{5, 4, 3, 2, 1},
+		},
+		{
+			name: "test 2",
+			args: args{
+				arr: []int{2, 3, 4, 5},
+			},
+			want: []int{5, 4, 3, 2},
+		},
+		{
+			name: "empty",
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			assert := require.New(t)
+			var arr []int
+			if tt.args.arr != nil {
+				arr = make([]int, len(tt.args.arr))
+				copy(arr, tt.args.arr)
+			}
+			reverse(arr)
+			assert.Equal(tt.want, arr)
+		})
+	}
+}
+
+func Test_rotate(t *testing.T) {
+	type args struct {
+		arr []int
+		mid int
+	}
+	tests := []struct {
+		name string
+		args args
+		want []int
+	}{
+		{
+			name: "test 1",
+			args: args{
+				arr: []int{1, 2, 3, 4, 5, 6},
+				mid: 3,
+			},
+			want: []int{4, 5, 6, 1, 2, 3},
+		},
+		{
+			name: "test 2",
+			args: args{
+				arr: []int{1, 2, 3, 4, 5},
+				mid: 4,
+			},
+			want: []int{5, 1, 2, 3, 4},
+		},
+		{
+			name: "test 3",
+			args: args{
+				arr: []int{1, 2, 3, 4, 5},
+				mid: 0,
+			},
+			want: []int{1, 2, 3, 4, 5},
+		},
+		{
+			name: "test 4",
+			args: args{
+				arr: []int{1, 2, 3, 4, 5},
+				mid: 5,
+			},
+			want: []int{1, 2, 3, 4, 5},
+		},
+		{
+			name: "empty",
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			assert := require.New(t)
+			var arr []int
+			if tt.args.arr != nil {
+				arr = make([]int, len(tt.args.arr))
+				copy(arr, tt.args.arr)
+			}
+			rotate(arr, tt.args.mid)
+			assert.Equal(tt.want, arr)
 		})
 	}
 }

@@ -155,3 +155,60 @@ func sortedSquares4(A []int) []int {
 
 	return A
 }
+
+// in-place rotate, merge sorted array.
+// time complexity: O(N) ~ O(N^2)
+// space complexity: O(1)
+func sortedSquares5(A []int) []int {
+	var i, j int
+	for j < len(A) && A[j] < 0 {
+		j++
+	}
+	reverse(A[:j])
+
+	for j < len(A) && i < j {
+		for i < j && A[i]*A[i] <= A[j]*A[j] {
+			A[i] = A[i] * A[i]
+			i++
+		}
+		
+		mid := j
+		for j < len(A) && A[j]*A[j] <= A[i]*A[i] {
+			A[j] = A[j] * A[j]
+			j++
+		}
+		rotate(A[i:j], mid-i)
+		i += j - mid
+	}
+
+	for i < j {
+		A[i] = A[i] * A[i]
+		i++
+	}
+	for j < len(A) {
+		A[j] = A[j] * A[j]
+		j++
+	}
+	return A
+}
+
+// time complexity: O(N)
+// space complexity: O(1)
+func rotate(arr []int, mid int) {
+	if mid < 0 || mid >= len(arr) {
+		return
+	}
+
+	reverse(arr[:mid])
+	reverse(arr[mid:])
+	reverse(arr)
+}
+
+// time complexity: O(N)
+// space complexity: O(1)
+func reverse(arr []int) {
+	for l, i := len(arr), 0; i < l-i-1; i++ {
+		j := l - i - 1
+		arr[i], arr[j] = arr[j], arr[i]
+	}
+}
