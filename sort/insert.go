@@ -1,4 +1,4 @@
-package sort 
+package sort
 
 /*
 Notes:
@@ -14,7 +14,7 @@ func insertSort(nums []int) {
 
 		var j int
 		for j = i; j > 0 && deal < nums[j-1]; j-- {
-				nums[j] = nums[j-1]
+			nums[j] = nums[j-1]
 		}
 		if j != i {
 			nums[j] = deal
