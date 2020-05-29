@@ -23,4 +23,5 @@ Reference for `Morris traversal`
 
 - [Construct Binary Tree from Inorder and Postorder Traversal](construct/inorder_postorder.go)
 - [Construct Binary Tree from Preorder and Inorder Traversal](construct/preorder_inorder.go)
-- [Populating Next Right Pointers in Each Node](problems/next_right.go)
+- [Populating Next Right Pointers in Each Node](problems/next_right_1.go)
+- [Populating Next Right Pointers in Each Node II](problems/next_right_2.go)

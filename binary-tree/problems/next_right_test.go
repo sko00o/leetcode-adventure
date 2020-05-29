@@ -1,6 +1,7 @@
 package problems
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/require"
@@ -36,10 +37,59 @@ func Test_connect(t *testing.T) {
 		{},
 	}
 
-	for _, tt := range tests {
-		assert := require.New(t)
-		root := connect(tt.root)
-		assert.True(check(root))
+	// perfect tree tests
+	for idx, f := range []func(*Node) *Node{
+		connect0,
+		connect01,
+	} {
+		t.Run(fmt.Sprintf("func#%d", idx), func(t *testing.T) {
+			for _, tt := range tests {
+				assert := require.New(t)
+				root := f(tt.root)
+				assert.True(check(root))
+			}
+		})
+	}
+
+	tests = append(tests, struct{ root *Node }{
+		root: &Node{
+			Val: 1,
+			Left: &Node{
+				Val: 2,
+				Left: &Node{
+					Val: 4,
+					Left: &Node{
+						Val: 7,
+					},
+				},
+				Right: &Node{
+					Val: 5,
+				},
+			},
+			Right: &Node{
+				Val: 3,
+				Right: &Node{
+					Val: 6,
+					Left: &Node{
+						Val: 8,
+					},
+				},
+			},
+		},
+	})
+
+	// normal tree tests
+	for idx, f := range []func(*Node) *Node{
+		connect,
+		connect1,
+	} {
+		t.Run(fmt.Sprintf("func#%d", idx), func(t *testing.T) {
+			for _, tt := range tests {
+				assert := require.New(t)
+				root := f(tt.root)
+				assert.True(check(root))
+			}
+		})
 	}
 }
 
