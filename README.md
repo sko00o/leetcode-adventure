@@ -14,7 +14,7 @@ Progress:
 
 - [x] [Arrays 101](arrays-101/README.md)
 - [x] [Linked List](linked-list/README.md)
-- [ ] [Binary Tree]()
+- [x] [Binary Tree](binary-tree/README.md)
 - [x] [Recursion I](recursion/README.md)
 - [ ] [Recursion II]()
 - [ ] [Machine Learning 101]()
@@ -30,8 +30,4 @@ Progress:
 
 ## More
 
-- [ ] [Sort](sort/README.md)
-
-## Ref
-
-
+- [x] [Sort](sort/README.md)
