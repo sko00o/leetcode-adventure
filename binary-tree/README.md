@@ -25,3 +25,4 @@ Reference for `Morris traversal`
 - [Construct Binary Tree from Preorder and Inorder Traversal](construct/preorder_inorder.go)
 - [Populating Next Right Pointers in Each Node](problems/next_right_1.go)
 - [Populating Next Right Pointers in Each Node II](problems/next_right_2.go)
+- [Lowest Common Ancestor of a Binary Tree](problems/lca.go)
