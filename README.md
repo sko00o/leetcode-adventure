@@ -20,7 +20,7 @@ Progress:
 - [ ] [Machine Learning 101]()
 - [x] [Binary Search](binary-search/README.md)
 - [ ] [Introduction to Ruby]()
-- [ ] [N-ary Tree]()
+- [ ] [N-ary Tree](nary-tree/README.md)
 - [ ] [Binary Search Tree]()
 - [ ] [Trie]()
 - [ ] [Hash Table]()
