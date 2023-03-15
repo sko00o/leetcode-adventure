@@ -4,7 +4,7 @@
 
 - [N-ary Tree Preorder Traversal](traversal/preorder.go)
 - N-ary Tree Preorder Traversal **[Locked]**
-- [N-ary Tree Postorder Traversal]()
+- [N-ary Tree Postorder Traversal](traversal/postorder.go)
 - N-ary Tree Postorder Traversal **[Locked]**
 - [N-ary Tree Level Order Traversal]()
 

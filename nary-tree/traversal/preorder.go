@@ -26,11 +26,10 @@ func preorder1(root *Node) (out []int) {
 				stack = append(stack, curr.Children[i]) // push
 			}
 			curr = nil
+			continue
 		}
-		if len(stack) != 0 {
-			curr = stack[len(stack)-1]   // top
-			stack = stack[:len(stack)-1] // pop
-		}
+		curr = stack[len(stack)-1]   // top
+		stack = stack[:len(stack)-1] // pop
 	}
 	return out
 }
