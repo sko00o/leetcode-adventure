@@ -3,10 +3,8 @@
 ## [Traversal of N-ary Tree](https://leetcode.com/explore/learn/card/n-ary-tree/130/traversal/916/)
 
 - [N-ary Tree Preorder Traversal](traversal/preorder.go)
-- N-ary Tree Preorder Traversal **[Locked]**
 - [N-ary Tree Postorder Traversal](traversal/postorder.go)
-- N-ary Tree Postorder Traversal **[Locked]**
-- [N-ary Tree Level Order Traversal]()
+- [N-ary Tree Level Order Traversal](traversal/level_order.go)
 
 ## [Recursion]()
 
