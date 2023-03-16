@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"reflect"
 	"testing"
+
+	"github.com/sko00o/leetcode-adventure/nary-tree/treenode"
 )
 
 func Test_postorder(t *testing.T) {
@@ -18,14 +20,14 @@ func Test_postorder(t *testing.T) {
 		{
 			name: "example 1",
 			args: args{
-				root: exampleTree1,
+				root: treenode.ExampleTree1,
 			},
 			want: []int{5, 6, 3, 2, 4, 1},
 		},
 		{
 			name: "example 2",
 			args: args{
-				root: exampleTree2,
+				root: treenode.ExampleTree2,
 			},
 			want: []int{2, 6, 14, 11, 7, 3, 12, 8, 4, 13, 9, 10, 5, 1},
 		},

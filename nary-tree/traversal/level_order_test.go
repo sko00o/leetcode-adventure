@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"reflect"
 	"testing"
+
+	"github.com/sko00o/leetcode-adventure/nary-tree/treenode"
 )
 
 func Test_levelOrder(t *testing.T) {
@@ -18,14 +20,14 @@ func Test_levelOrder(t *testing.T) {
 		{
 			name: "example 1",
 			args: args{
-				root: exampleTree1,
+				root: treenode.ExampleTree1,
 			},
 			want: [][]int{{1}, {3, 2, 4}, {5, 6}},
 		},
 		{
 			name: "example 2",
 			args: args{
-				root: exampleTree2,
+				root: treenode.ExampleTree2,
 			},
 			want: [][]int{{1}, {2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13}, {14}},
 		},
