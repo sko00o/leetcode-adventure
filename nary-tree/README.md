@@ -6,9 +6,9 @@
 - [N-ary Tree Postorder Traversal](traversal/postorder.go)
 - [N-ary Tree Level Order Traversal](traversal/level_order.go)
 
-## [Recursion]()
+## [Recursion](https://leetcode.com/explore/learn/card/n-ary-tree/131/recursion/917/)
 
-- [Maximum Depth of N-ary Tree]()
+- [Maximum Depth of N-ary Tree](recursion/max_depth.go)
 - Encode N-ary Tree to Binary Tree **[Locked]**
 - Solution: Encode N-ary Tree to Binary Tree **[Locked]**
 
