@@ -10,8 +10,8 @@
 
 - [Maximum Depth of N-ary Tree](recursion/max_depth.go)
 - Encode N-ary Tree to Binary Tree **[Locked]**
-- Solution: Encode N-ary Tree to Binary Tree **[Locked]**
 
 ## Conclusion
 
-- Serialize and Deserialize N-ary Tree **[Locked]**
+- [Serialize and Deserialize N-ary Tree]((https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/)) **[Locked]**
+  - [Solution](problems/codec.go)
