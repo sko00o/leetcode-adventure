@@ -1,4 +1,4 @@
-package problems
+package codec
 
 import (
 	"testing"
