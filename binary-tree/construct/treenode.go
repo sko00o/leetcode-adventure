@@ -1,8 +1,7 @@
 package construct
 
-// TreeNode is definition for a binary tree node.
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import (
+	"github.com/sko00o/leetcode-adventure/binary-tree/treenode"
+)
+
+type TreeNode = treenode.TreeNode

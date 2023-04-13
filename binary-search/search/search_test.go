@@ -7,5 +7,5 @@ import (
 )
 
 func TestSearch(t *testing.T) {
-	test.CommonTest(t, search)
+	test.CommonTest(t, search, search0, search1)
 }

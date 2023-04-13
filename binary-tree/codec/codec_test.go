@@ -1,4 +1,4 @@
-package problems
+package codec
 
 import (
 	"testing"
@@ -7,7 +7,6 @@ import (
 )
 
 func TestCodec(t *testing.T) {
-
 	tests := []struct {
 		root *TreeNode
 	}{
