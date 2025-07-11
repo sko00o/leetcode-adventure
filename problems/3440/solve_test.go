@@ -23,6 +23,14 @@ func Test_maxFreeTime(t *testing.T) {
 				endTime:   []int{2, 5},
 			},
 			want: 2,
+			/*
+				gap         ev
+				1   0,1
+				            1,2   1
+				1   2,3
+				            3,5   2
+				0   5,5
+			*/
 		},
 		{
 			name: "test2",
@@ -41,6 +49,18 @@ func Test_maxFreeTime(t *testing.T) {
 				endTime:   []int{1, 4, 8, 10},
 			},
 			want: 6,
+			/*
+				gap         ev
+				0   0,0
+				            0,1   1
+				2   1,3
+				            3,4   1
+				3   4,7
+				            7,8   1
+				1   8,9
+				            9,10  1
+				0   10,10
+			*/
 		},
 		{
 			name: "test4",

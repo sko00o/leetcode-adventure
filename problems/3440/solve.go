@@ -1,152 +1,79 @@
 package problems
 
-// TODO(Time Limit Exceeded)
+// Still TLE
 func maxFreeTime(eventTime int, startTime []int, endTime []int) int {
-	maxFreeTime := currMaxFreeTime(eventTime, startTime, endTime)
-	for i := range startTime {
-		t := tryReschedule(eventTime, i, startTime, endTime)
-		if t > maxFreeTime {
-			maxFreeTime = t
+	gapLen := func(n int) int {
+		if n == 0 {
+			return startTime[0]
 		}
+		if n == len(startTime) {
+			return eventTime - endTime[n-1]
+		}
+		return startTime[n] - endTime[n-1]
 	}
-
-	return maxFreeTime
-}
-
-func remove(i int, arr []int) (res []int) {
-	if i > 0 {
-		res = append(res, arr[:i]...)
+	gapList := make([]gap, 0, len(startTime)+1)
+	{
+		gapStart := 0
+		for i := 0; i < len(startTime); i++ {
+			gapVal := startTime[i] - gapStart
+			gapList = append(gapList, gap{idx: i, val: gapVal})
+			gapStart = endTime[i]
+		}
+		gapList = append(gapList, gap{idx: len(startTime), val: eventTime - gapStart})
 	}
-	if i < len(arr) {
-		res = append(res, arr[i+1:]...)
-	}
-	return
-}
-
-// insert before i
-func insert(i int, arr []int, val int) (res []int) {
-	if i < 0 {
-		i = 0
-	}
-	if i >= len(arr) {
-		return append(arr, val)
-	}
-
-	res = make([]int, len(arr)+1)
-	copy(res, arr[:i])
-	res[i] = val
-	copy(res[i+1:], arr[i:])
-	return
-}
-
-func tryReschedule(eventTime int, i int, start, end []int) int {
-	iLen := end[i] - start[i]
-	remStart := remove(i, start)
-	remEnd := remove(i, end)
+	quickSort(gapList, 0, len(gapList)-1)
 
 	maxFreeTime := 0
-	var newStart, newEnd []int
-
-	extStart := append(append([]int{0}, start...), eventTime)
-	extEnd := append(append([]int{0}, end...), eventTime)
-	newI := i + 1
-
-	// start[i] move to other endTime[j], j != i
-	for j := range extEnd {
-		if j == newI {
-			continue
+	for i := range startTime {
+		evLen := endTime[i] - startTime[i]
+		freeTime := gapLen(i) + gapLen(i+1)
+		if hasBiggerGap(gapList, evLen, i) {
+			freeTime += evLen
 		}
-		newS := extEnd[j]
-		newE := newS + iLen
-		if newE > eventTime {
-			continue
-		}
-		if j < len(extEnd)-1 {
-			next := j + 1
-			if next == newI {
-				next++
-			}
-			if next < len(extStart) && newE > extStart[next] {
-				continue
-			}
-		}
-
-		/*
-			    i
-			  0 1 2 3
-			0 1 2 3 4 5
-			    j
-		*/
-
-		// insert after, so offset +1
-		if j < newI {
-			newStart = insert(j, remStart, newS)
-			newEnd = insert(j, remEnd, newE)
-		} else {
-			newStart = insert(j-1, remStart, newS)
-			newEnd = insert(j-1, remEnd, newE)
-		}
-		t := currMaxFreeTime(eventTime, newStart, newEnd)
-		if maxFreeTime < t {
-			maxFreeTime = t
+		if maxFreeTime < freeTime {
+			maxFreeTime = freeTime
 		}
 	}
-
-	// endTime[i] move to other startTime[j], j != i
-	for j := range extStart {
-		if j == newI {
-			continue
-		}
-		newE := extStart[j]
-		newS := newE - iLen
-		if newS < 0 {
-			continue
-		}
-		if j > 1 {
-			prev := j - 1
-			if prev == newI {
-				prev--
-			}
-			if prev >= 0 && newS < extEnd[prev] {
-				continue
-			}
-		}
-
-		/*
-			    i
-			  0 1 2 3
-			0 1 2 3 4 5
-			    j
-		*/
-
-		// insert before
-		if j < newI {
-			newStart = insert(j-1, remStart, newS)
-			newEnd = insert(j-1, remEnd, newE)
-		} else {
-			newStart = insert(j-2, remStart, newS)
-			newEnd = insert(j-2, remEnd, newE)
-		}
-		t := currMaxFreeTime(eventTime, newStart, newEnd)
-		if maxFreeTime < t {
-			maxFreeTime = t
-		}
-	}
-
 	return maxFreeTime
 }
 
-func currMaxFreeTime(eventTime int, startTime []int, endTime []int) int {
-	maxGap := 0
-	gapStart := 0
-	for i := range startTime {
-		if gap := startTime[i] - gapStart; gap > 0 && maxGap < gap {
-			maxGap = gap
+type gap struct {
+	idx int
+	val int
+}
+
+// first index of arr val that is bigger than val, notI is excluded
+func hasBiggerGap(arr []gap, val int, notI int) bool {
+	hi := len(arr) - 1
+	if arr[hi].val < val {
+		return false
+	}
+	for hi >= 0 && (arr[hi].idx == notI || arr[hi].idx == notI+1) {
+		hi--
+	}
+	if hi < 0 {
+		return false
+	}
+	return arr[hi].val >= val
+}
+
+func quickSort(arr []gap, lo, hi int) {
+	if lo >= hi || lo < 0 {
+		return
+	}
+	p := partition(arr, lo, hi)
+	quickSort(arr, lo, p-1)
+	quickSort(arr, p+1, hi)
+}
+func partition(arr []gap, lo, hi int) int {
+	pivot := arr[hi]
+	i := lo
+	for j := lo; j < hi; j++ {
+		if arr[j].val < pivot.val {
+			arr[i], arr[j] = arr[j], arr[i]
+			i++
 		}
-		gapStart = endTime[i]
 	}
-	if gap := eventTime - gapStart; gap > 0 && maxGap < gap {
-		maxGap = gap
-	}
-	return maxGap
+	arr[i], arr[hi] = arr[hi], arr[i]
+	return i
 }
