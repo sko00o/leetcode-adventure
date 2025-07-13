@@ -56,3 +56,50 @@ func maxFreeTime(eventTime int, startTime []int, endTime []int) int {
 	}
 	return maxFreeTime
 }
+
+// Greedy
+func maxFreeTime1(eventTime int, startTime []int, endTime []int) int {
+	n := len(startTime)
+	// q[i] means if meeting i has non-adjacent gap to move
+	q := make([]bool, n)
+	// left to right, max duration t1 of any non-adjacent gap
+	// right to left, max duration t2 of any non-adjacent gap
+	t1, t2 := 0, 0
+	for i := range n {
+		if endTime[i]-startTime[i] <= t1 {
+			q[i] = true
+		}
+		if i == 0 {
+			t1 = max(t1, startTime[i])
+		} else {
+			t1 = max(t1, startTime[i]-endTime[i-1])
+		}
+
+		if endTime[n-1-i]-startTime[n-1-i] <= t2 {
+			q[n-1-i] = true
+		}
+		if i == 0 {
+			t2 = max(t2, eventTime-endTime[n-1])
+		} else {
+			t2 = max(t2, startTime[n-i]-endTime[n-1-i])
+		}
+	}
+
+	maxFreeTime := 0
+	for i := range n {
+		left := 0
+		if i != 0 {
+			left = endTime[i-1]
+		}
+		right := eventTime
+		if i != n-1 {
+			right = startTime[i+1]
+		}
+		freeTime := right - left
+		if !q[i] {
+			freeTime -= endTime[i] - startTime[i]
+		}
+		maxFreeTime = max(maxFreeTime, freeTime)
+	}
+	return maxFreeTime
+}
