@@ -1,5 +1,7 @@
 package problems
 
+// Time: O(n)
+// Space: O(n)
 func maxFreeTime(eventTime int, startTime []int, endTime []int) int {
 	gapLen := func(n int) int {
 		if n == 0 {
@@ -58,12 +60,14 @@ func maxFreeTime(eventTime int, startTime []int, endTime []int) int {
 }
 
 // Greedy
+// Time: O(n)
+// Space: O(n)
 func maxFreeTime1(eventTime int, startTime []int, endTime []int) int {
 	n := len(startTime)
 	// q[i] means if meeting i has non-adjacent gap to move
 	q := make([]bool, n)
-	// left to right, max duration t1 of any non-adjacent gap
-	// right to left, max duration t2 of any non-adjacent gap
+	// left to right, non-adjacent max gap before i
+	// right to left, non-adjacent max gap after i
 	t1, t2 := 0, 0
 	for i := range n {
 		if endTime[i]-startTime[i] <= t1 {
@@ -100,6 +104,55 @@ func maxFreeTime1(eventTime int, startTime []int, endTime []int) int {
 			freeTime -= endTime[i] - startTime[i]
 		}
 		maxFreeTime = max(maxFreeTime, freeTime)
+	}
+	return maxFreeTime
+}
+
+// Greedy + Optimization
+// Time: O(n)
+// Space: O(1)
+func maxFreeTime2(eventTime int, startTime []int, endTime []int) int {
+	n := len(startTime)
+	maxFreeTime := 0
+	t1, t2 := 0, 0
+	for i := range n {
+		left := 0
+		if i != 0 {
+			left = endTime[i-1] // last endTime
+		}
+		right := eventTime
+		if i != n-1 {
+			right = startTime[i+1] // next startTime
+		}
+		if endTime[i]-startTime[i] <= t1 {
+			maxFreeTime = max(maxFreeTime, right-left)
+		}
+		if i == 0 {
+			t1 = max(t1, startTime[i])
+		} else {
+			t1 = max(t1, startTime[i]-endTime[i-1])
+		}
+
+		// also compare with no available non-adjacent gap case
+		maxFreeTime = max(maxFreeTime, right-left-(endTime[i]-startTime[i]))
+
+		revI := n - i - 1
+		left = 0
+		if revI != 0 {
+			left = endTime[revI-1] // last endTime
+		}
+		right = eventTime
+		if revI != n-1 {
+			right = startTime[revI+1] // next startTime
+		}
+		if endTime[revI]-startTime[revI] <= t2 {
+			maxFreeTime = max(maxFreeTime, right-left)
+		}
+		if revI == n-1 {
+			t2 = max(t2, eventTime-endTime[n-1])
+		} else {
+			t2 = max(t2, startTime[n-i]-endTime[n-1-i])
+		}
 	}
 	return maxFreeTime
 }

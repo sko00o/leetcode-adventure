@@ -83,7 +83,7 @@ func Test_maxFreeTime(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			for idx, fn := range []func(int, []int, []int) int{maxFreeTime, maxFreeTime1} {
+			for idx, fn := range []func(int, []int, []int) int{maxFreeTime, maxFreeTime1, maxFreeTime2} {
 				if got := fn(tt.args.eventTime, tt.args.startTime, tt.args.endTime); got != tt.want {
 					t.Errorf("fn_%d() = %v, want %v", idx, got, tt.want)
 				}
