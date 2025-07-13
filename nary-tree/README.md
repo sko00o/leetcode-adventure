@@ -14,4 +14,4 @@
 ## Conclusion
 
 - [Serialize and Deserialize N-ary Tree]((https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/)) **[Locked]**
-  - [Solution](problems/codec.go)
+  - [Solution](codec/codec.go)

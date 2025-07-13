@@ -16,17 +16,17 @@ Progress:
 - [x] [Linked List](linked-list/README.md)
 - [x] [Binary Tree](binary-tree/README.md)
 - [x] [Recursion I](recursion/README.md)
-- [ ] [Recursion II]()
-- [ ] [Machine Learning 101]()
+- [x] [Queue & Stack](queue-stack/README.md)
 - [x] [Binary Search](binary-search/README.md)
-- [ ] [Introduction to Ruby]()
 - [x] [N-ary Tree](nary-tree/README.md)
-- [ ] [Binary Search Tree]()
+- [ ] [Recursion II]()
 - [ ] [Trie]()
+- [ ] [Binary Search Tree]()
 - [ ] [Hash Table]()
 - [ ] [Array and String]()
-- [x] [Queue & Stack](queue-stack/README.md)
+- [ ] [Introduction to Ruby]()
 - [ ] [Decision Tree]()
+- [ ] [Machine Learning 101]()
 
 ## More
 

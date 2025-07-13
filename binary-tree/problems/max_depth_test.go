@@ -3,15 +3,17 @@ package problems
 import (
 	"fmt"
 	"testing"
+
+	"github.com/sko00o/leetcode-adventure/binary-tree/treenode"
 )
 
 func Test_maxDepth(t *testing.T) {
 	tests := []struct {
-		input  numSlice
+		input  treenode.NumSlice
 		output int
 	}{
 		{
-			input: numSlice{
+			input: treenode.NumSlice{
 				{3},
 				{9},
 				{20},
@@ -23,7 +25,7 @@ func Test_maxDepth(t *testing.T) {
 			output: 3,
 		},
 		{
-			input: numSlice{
+			input: treenode.NumSlice{
 				{3},
 			},
 			output: 1,
@@ -36,7 +38,7 @@ func Test_maxDepth(t *testing.T) {
 	} {
 		t.Run(fmt.Sprintf("func#%d", idx), func(t *testing.T) {
 			for _, tst := range tests {
-				got := f(makeTree(tst.input))
+				got := f(treenode.New(tst.input))
 				if got != tst.output {
 					t.Errorf("expect: %d, got: %d", tst.output, got)
 				}

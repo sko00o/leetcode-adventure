@@ -19,6 +19,7 @@
 ## Merge Sort
 
 - [Merge Sort](merge.go)
+  - [Divide and Conquer / Merge Sort](https://leetcode.com/explore/learn/card/recursion-ii/470/divide-and-conquer/2868/)
 
 ## Heap Sort
 

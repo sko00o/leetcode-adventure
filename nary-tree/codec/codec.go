@@ -1,13 +1,9 @@
-package problems
+package codec
 
 import (
 	"strconv"
 	"strings"
-
-	"github.com/sko00o/leetcode-adventure/nary-tree/treenode"
 )
-
-type Node = treenode.Node
 
 type Codec struct{}
 

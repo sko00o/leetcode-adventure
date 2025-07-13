@@ -1,6 +1,6 @@
 module github.com/sko00o/leetcode-adventure
 
-go 1.19
+go 1.24
 
 require (
 	github.com/smartystreets/goconvey v1.7.2
